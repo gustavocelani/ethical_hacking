@@ -1,3 +1,0 @@
-Get a runtime at: http://support.microsoft.com/support/vbasic/runtime.asp
-
-Good luck!
