@@ -17,5 +17,4 @@ They are separated by target operational system: Windows OS or Linux OS.
 * 1x LED for General Use
 * Dimensions: 1,8cm x 2,6cm
 
-![Alt text](digispark.jpg?raw=true "Digispark")
-
+![Alt text](digispark.png?raw=true "Digispark")
