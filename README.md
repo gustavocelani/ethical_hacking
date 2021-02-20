@@ -1,59 +1,58 @@
 # Ethical Hacking
 
 ```
- ..',..                                                                                           
-          ..,; ;,.                                                                                
-                  .,l;;;;.                                                                        
-                         .:ol ;;;.                                                                
-                                .:ooo;;;.                                                         
-                                      'coood; ;.                                                  
-....;;;;;;;;;; ;;;;;;;;;;;;;; ;;.... ..    .c oooo;;,                                             
-           ... ..',;:cloooooo oooooooooool:;' ':ooooo'                                            
-                                  .';looooooo ooooooo.                                            
-                                           .. ,looooo,                                            
-                           .' ;;;;;;;;;oooooo oooooooo                                            
-                  .;;;;olc:,' .....    ....'; :looooool                                           
-           ,;, ..                                   :ooo.                                         
-      ..                                             oooo;             '                          
-                                                    coooooo; ,            ' '                     
-                                                 ,;ooooooooo ooo;;'          .;                   
-                                               ,oooool'        .':ooo;;' .     .:.                
-                                            . ooooo'                 .;oooo ;l'  ,d               
-                                            l oooo;                    .:oo ooo,' cl              
-                                           ,o ooo'                          ;ooooo,;o.            
-                                           oo ool                             .ooooolo.           
-                                           oo ooc                               ;oooooo.          
-                                           lo ooo                                loooooo          
-                                           .o oooo                                .cooooo.        
-                                            . ooooo'                                  .ooo ;      
-                                               cooooo,                                  ::        
-                                                 :ooooo;.                                         
-                                                    :ooooo;; .                                    
-                                                     .:ooooo ool.                                 
-                                                          'c ooooo;;;.                            
-                                                                .:oooool;;.                       
-                                                                     .coooo ol;;                  
-                                                                         ,o oo,.:o;,              
-                                                                             loo.  .c;,           
-                                                                              .oo'     c;         
-                                                                                ;oc      ; ,      
-                                                                                 .oc        l.    
-                                                                                  .o,        c.   
-                                                                                   'o         l   
-                                                                                    o,        :   
-                                                                                    'o        ..  
-                                                                                     l.        '  
-                                                                                     ,;           
-                                                                                     .:           
-                                                                                      c           
-                                                                                      ,                                           
+ ..',..                                                                                         
+          ..,; ;,.                                                                              
+                  .,l;;;;.                                                                      
+                         .:ol ;;;.                                                              
+                                .:ooo;;;.                                                       
+                                      'coood; ;.                                                
+....;;;;;;;;;; ;;;;;;;;;;;;;; ;;.... ..    .c oooo;;,                                           
+           ... ..',;:cloooooo oooooooooool:;' ':ooooo'                                          
+                                  .';looooooo ooooooo.                                          
+                                           .. ,looooo,                                          
+                           .' ;;;;;;;;;oooooo oooooooo                                          
+                  .;;;;olc:,' .....    ....'; :looooool                                         
+           ,;, ..                                   :ooo.                                       
+      ..                                             oooo;             '                        
+                                                    coooooo; ,            ' '                   
+                                                 ,;ooooooooo ooo;;'          .;                 
+                                               ,oooool'        .':ooo;;' .     .:.              
+                                            . ooooo'                 .;oooo ;l'  ,d             
+                                            l oooo;                    .:oo ooo,' cl            
+                                           ,o ooo'                          ;ooooo,;o.          
+                                           oo ool                             .ooooolo.         
+                                           oo ooc                               ;oooooo.        
+                                           lo ooo                                loooooo        
+                                           .o oooo                                .cooooo.      
+                                            . ooooo'                                  .ooo ;    
+                                               cooooo,                                  ::      
+                                                 :ooooo;.                                       
+                                                    :ooooo;; .                                  
+                                                     .:ooooo ool.                               
+                                                          'c ooooo;;;.                          
+                                                                .:oooool;;.                     
+                                                                     .coooo ol;;                
+                                                                         ,o oo,.:o;,            
+                                                                             loo.  .c;,         
+                                                                              .oo'     c;       
+                                                                                ;oc      ; ,    
+                                                                                 .oc        l.  
+                                                                                  .o,        c. 
+                                                                                   'o         l 
+                                                                                    o,        : 
+                                                                                    'o        ..
+                                                                                     l.        '
+                                                                                     ,;         
+                                                                                     .:         
+                                                                                      c         
+                                                                                      ,         
              _____ _   _     _           _     _   _            _    _             
             | ____| |_| |__ (_) ___ __ _| |   | | | | __ _  ___| | _(_)_ __   __ _ 
             |  _| | __| '_ \| |/ __/ _` | |   | |_| |/ _` |/ __| |/ / | '_ \ / _` |
             | |___| |_| | | | | (_| (_| | |   |  _  | (_| | (__|   <| | | | | (_| |
             |_____|\__|_| |_|_|\___\__,_|_|   |_| |_|\__,_|\___|_|\_\_|_| |_|\__, |
-                                                                             |___/ 
-
+                                                                             |___/
 ```
 
 ## White Hat
