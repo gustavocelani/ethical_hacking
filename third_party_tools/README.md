@@ -33,6 +33,15 @@ So you can recognize the misconfigurations easily.
 * Check the **Local Windows Privilege Escalation checklist** from **[book.hacktricks.xyz](https://book.hacktricks.xyz/windows/checklist-windows-privilege-escalation)**
 * **[WinPEAS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS) - Windows local Privilege Escalation Awesome Script (C#.exe and .bat)**
 
+### Basic Usage
+
+```
+$ $ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh
+$ chmod +x linpeas.sh
+$ ./linpeas.sh -a > linpeas_output.txt
+$ less -r linpeas_output.txt
+```
+
 
 <a name="LES"></a>
 # LES - Linux Privilege Escalation Auditing Tool
@@ -53,5 +62,13 @@ For each exploit, exposure is calculated:
 
 LES can check for most of security settings available by your Linux kernel.  
 This functionality is modern continuation of --kernel switch from checksec.sh tool by *Tobias Klein*.
+
+### Basic Usage
+
+```
+$ wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
+$ chmod +x les.sh
+$ ./les.sh
+```
 
 ________________________
