@@ -4,6 +4,7 @@
 * [PEASS - Privilege Escalation Awesome Scripts Suite](#PEASS)
 * [LES - Linux Privilege Escalation Auditing Tool](#LES)
 * [OpenBoleto](#OpenBoleto)
+* [OpenVAS](#OpenVAS)
 
 
 <a name="PayloadsAllTheThings"></a>
@@ -82,7 +83,7 @@ O OpenBoleto é uma biblioteca de código aberto para geração de boletos banc�
 Boletos bancários são considerados um meio de pagamento muito comum no Brasil.  
 O foco é ser simples e ter uma arquitetura compatível com os recursos mais modernos do PHP.
 
-### Usage
+### Basic Usage
 
 ```
 $ git clone https://github.com/openboleto/openboleto.git
@@ -95,5 +96,39 @@ $ php banco_do_brasil.php > /tmp/boleto.html
 $ firefox /tmp/boleto.html &
 ```
 
+
+
+<a name="OpenVAS"></a>
+# OpenVAS
+
+**Repository**: [greenbone/openvas-scanner](https://github.com/greenbone/openvas-scanner)  
+**WebSite**: [openvas.org](https://www.openvas.org/)
+
+This is the Open Vulnerability Assessment Scanner (OpenVAS) of the Greenbone Vulnerability Management (GVM) Solution.  
+It is used for the Greenbone Security Manager appliances and is a full-featured scan engine that executes a continuously updated and extended feed of Network Vulnerability Tests (NVTs).
+
+### Basic Usage
+
+```
+# Installation
+$ sudo apt-get install openvas
+
+# Initial Setup
+$ sudo gvm-setup
+
+# Create a user
+$ sudo runuser -u _gvm -- gvmd --create-user=administrator --new-password=12345
+User created with password '5aae84fa-f1ec-409d-bf2b-24e3bbc38595'.
+
+# Start Daemon
+$ sudo gvm-start
+
+Web Page: https://127.0.0.1:9392
+Username: administrator
+Password: 5aae84fa-f1ec-409d-bf2b-24e3bbc38595
+
+# Stop Daemon
+$ sudo gvm-stop
+```
 
 ________________________
