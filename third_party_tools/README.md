@@ -3,6 +3,7 @@
 * [Payloads All The Things](#PayloadsAllTheThings)
 * [PEASS - Privilege Escalation Awesome Scripts Suite](#PEASS)
 * [LES - Linux Privilege Escalation Auditing Tool](#LES)
+* [OpenBoleto](#OpenBoleto)
 
 
 <a name="PayloadsAllTheThings"></a>
@@ -70,5 +71,29 @@ $ wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/li
 $ chmod +x les.sh
 $ ./les.sh
 ```
+
+
+<a name="OpenBoleto"></a>
+# OpenBoleto
+
+**Repository**: [openboleto/openboleto](https://github.com/openboleto/openboleto)
+
+O OpenBoleto é uma biblioteca de código aberto para geração de boletos bancários.  
+Boletos bancários são considerados um meio de pagamento muito comum no Brasil.  
+O foco é ser simples e ter uma arquitetura compatível com os recursos mais modernos do PHP.
+
+### Usage
+
+```
+$ git clone https://github.com/openboleto/openboleto.git
+$ cd ./openboleto/samples/
+
+# Edit fields of your chosen emitter (Banco do Brasil in this example)
+$ vi banco_do_brasil.php
+
+$ php banco_do_brasil.php > /tmp/boleto.html
+$ firefox /tmp/boleto.html &
+```
+
 
 ________________________
