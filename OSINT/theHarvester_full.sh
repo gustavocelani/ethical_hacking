@@ -22,7 +22,6 @@
 if [ ! "$#" -eq 1 ]
 then
 	echo -e "\nUsage: ./theHarvester_multiple_sources.sh <target>"
-	gustavo-copyright
 	exit 1
 fi
 
@@ -54,6 +53,9 @@ cd ./output_xml
 
 for XML_FILE in ./*.xml
 do
+	sed -i 's/<host>/\n<host>/g' ${XML_FILE}
+	sed -i 's/<\/host>/<\/host>\n/g' ${XML_FILE}
+
 	sed -i 's/<hostname>/\n<hostname>/g' ${XML_FILE}
 	sed -i 's/<\/hostname>/<\/hostname>\n/g' ${XML_FILE}
 
@@ -67,13 +69,14 @@ figlet "The Harvester"
 echo "            Formatted Result for: ${TARGET}"
 
 echo ""
-echo "+--------+"
-echo "| Emails |"
-echo "+--------+"
-grep -rnw -E "<email>(.*)</email>" | cut -d ">" -f 2 | cut -d "<" -f 1 | sort | uniq
-
-echo ""
 echo "+-------+"
 echo "| Hosts |"
 echo "+-------+"
-grep -rnw -E "<hostname>(.*)</hostname>" | cut -d ">" -f 2 | cut -d "<" -f 1 | sort | uniq
+grep -rnw -E "<host>(.*)</host>|<hostname>(.*)</hostname>" | cut -d ">" -f 2 | cut -d "<" -f 1 | sort | uniq
+
+echo ""
+echo "+------------------+"
+echo "| E-mail Addresses |"
+echo "+------------------+"
+grep -rnw -E "<email>(.*)</email>" | cut -d ">" -f 2 | cut -d "<" -f 1 | sort | uniq
+
