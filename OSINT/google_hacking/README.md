@@ -20,5 +20,5 @@ You can use symbols or words in your search to make your search results more pre
 
 ## Dorks
 
-**Repository**: [Exploit DB - Google Hacking Database]([huite](https://www.exploit-db.com/google-hacking-database))
+**Repository**: [Exploit DB - Google Hacking Database](https://www.exploit-db.com/google-hacking-database)
 
