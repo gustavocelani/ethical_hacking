@@ -21,7 +21,7 @@
 
 if [ ! "$#" -eq 1 ]
 then
-	echo -e "\nUsage: ./theHarvester_multiple_sources.sh <target>"
+	echo -e "\nUsage: ./theHarvester_full.sh <target>"
 	exit 1
 fi
 
