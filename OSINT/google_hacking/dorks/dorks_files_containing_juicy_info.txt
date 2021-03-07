@@ -1,0 +1,480 @@
+intitle:"index of" "secret.yaml"
+inurl:"dcwp_twitter.php"
+intitle:"index of" "application.properties"
+ext:(doc | pdf | xls | txt |) (intext:confidential salary) inurl:confidential
+filetype:log inurl:paypal
+intitle:final.attendee.list | inurl:final.attendee.list
+ext:xlsx inurl:database
+inurl:https://trello.com AND intext:@gmail.com AND intext:password
+intitle:"index of" intext:"apikey.txt
+allintext:@gmail.com filetype:log
+site:ftp.*.*.* "ComputerName=" + "[Unattended] UnattendMode"
+inurl:"/php/info.php" "PHP Version"
+"The SQL command completed successfully." ext:txt | ext:log
+ext:yml | ext:txt | ext:env "Database Connection Information Database server ="
+intitle:"index of" intext:"web.xml"
+ext:php intitle:phpinfo "published by the PHP Group"
+ext:txt | ext:log | ext:cfg "Building configuration..."
+"putty.log" ext:log | ext:cfg | ext:txt | ext:sql | ext:env
+ext:sql | ext:txt intext:"-- phpMyAdmin SQL Dump --" + intext:"admin"
+"secret_key_base:" ext:exs | ext:txt | ext:env | ext:cfg
+intitle:"index of" "Clientaccesspolicy.xml"
+site:gov ext:sql | ext:dbf | ext:mdb
+Index of /_vti_pvt +"*.pwd"
+intitle:"index of" intext:credentials
+intitle:"index of" "/.idea"
+intitle:"index of" "service-Account-Credentials.json" | "creds.json"
+site:*gov.* intitle:index.of db
+"-- Server version" "-- MySQL Administrator dump 1.4" ext:sql
+intitle:"index of" "/xampp/htdocs" | "C:/xampp/htdocs/"
+"* Authentication Unique Keys and Salts" ext:txt | ext:log
+ext:txt | ext:log | ext:cfg | ext:yml "administrator:500:"
+allintext:"Index Of" "cookies.txt"
+"index of" "/home/000~ROOT~000/etc"
+intitle:"PowerMTA" inurl:logs
+allintext:"index of" "oauth-private.key"
+"UV9 Error (1.0)"
+intitle:"Environment Variables" inurl:/cgi-bin/
+intitle:"index of" "mysql.log" | "mysql.logs"
+"putty.log" ext:log | ext:cfg | ext:txt
+intitle:"index of" "config.db"
+intitle:"index of" "phpmyadmin.sql"
+Database:phpmyadmin intext:mysql ext:sql inurl:phpmyadmin
+'AUTH_SALT' | 'SECURE_AUTH_SALT' | 'LOGGED_IN_SALT' | 'NONCE_SALT' ext:txt | ext:cfg | ext:env | ext:ini
+intitle:"index of" "composer.lock"
+"index of" "callback.php"
+site:ftp://ftp.*.* ext:sql
+intext:admin ext:sql inurl:admin
+ext:log intext:NetworkManager "systemd"
+"index of" "user.MYD"
+allintext:"API_SECRET*" ext:env | ext:yml
+"Reflector Dashboard" inurl:/db/index.php/
+intitle:"index of" jboss-service.xml
+intext:ISUR_MACHINE IIS -log
+allintext:username,password filetype:log
+intitle:"index of" exception.log
+intitle:"report" ("OpenVAS" | "Nikto") ext:pdf OR ext:html
+intitle:"report" ("Fortify" | "Web Inspect") filetype:pdf
+intitle:"Index of /" "joomla/database"
+intitle:"report" ("qualys" | "acunetix" | "nessus" | "netsparker" | "nmap") filetype:html
+intitle:"index of" "bundle.pem"
+"Index of" "accounts.sql"
+"-----BEGIN RSA PRIVATE KEY-----" inurl:id_rsa
+intitle:"index of" ./bash_history
+intitle:"index of" /etc/openvpn/
+intitle:"index of" "*named.root.key"
+intitle:"index of" "id_rsa.pub"
+Index of /__MACOSX/System
+intext:"Not to be distributed" ext:doc OR ext:pdf OR ext:xls OR ext:xlsx
+index of /backend/prod/config
+"Index of" "/access"
+intitle:"index of /" "*key.pem"
+intext:"index of /" "*.yaml"
+"index of" "siri"
+intitle:"index of" secrets.yml
+intext:"index of /" "config.json"
+intitle:"index of" admin.tar
+index of .svn/text-base/index.php.svn-base
+intitle:index.of.?.db
+"Index of" "customer.php"
+"index of sqlite"
+"root.log" ext:log
+index of "logs.zip"
+intitle:"index of" "dev/config"
+index of "dbbackup"
+intitle:"index of /" "nginx.conf"
+DORK : intext:"index of" "var/log/"
+"microsoft internet information services" ext:log
+"phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+intitle:"index of" "wp-admin.zip"
+inurl:admin intitle:index of ext:sql | xls | xml | json | csv
+index of "backup.zip"
+intitle:"index of" "adminsubscribeack.txt"
+inurl:.drone.yml intext:git config user.email
+"index of" /ftp/logs
+intitle:"index of" "database/config"
+intitle:"index of" "var/log/"
+intitle:index of config.asp
+intitle:"index of" "security.php"
+intitle:"index of" "aws-config.php"
+"index of" "sshd_config"
+index.of:"pcap" -site:stackoverflow.com -site:github.com
+inurl:"ReportServer/Pages/ReportViewer.aspx"
+allinurl:index.php?db=information_schema
+intitle:"index of" "auth_config.php"
+"index of" "user.sqlite"
+"index of" /private/logs
+intitle:"index of" "auth.config"
+intitle:"index of" "log.bak"
+intitle:"index of" ".config"
+filetype:sql intext: "sql dump"
+ext:sql intext:"-- phpMyAdmin SQL Dump
+intitle:"index of" "properties.ini"
+intitle:"index of" "db.log"
+intext:"W E L C O M E to R O O T" ext:cfg OR ext:log OR ext:txt
+intitle:"index of" "userdata.json"
+intitle:"index of " "users.json"
+intitle:"index of" "wpadmin-secure.htaccess"
+intitle:"index of" "privkey.pem"
+intitle:"index of" "dhparams.pem"
+intitle:"index of" "token.txt"
+intitle:"index of" "*root.pem"
+intitle:"index of" "refresh_token.txt" OR "access_token.txt" OR "jsapi_ticket.txt"
+intitle:"index of" "configure.in"
+intitle:"index of" "user data.txt"
+intitle:"index of" "mvn-settings.xml"
+intitle:"index of" "cassandra-yaml"
+"index of" "wp-config.zip"
+intitle:"index of" "jsapi_ticket.json"
+intitle:"index of" "fullchain.pem" OR "chain.pem"
+intitle:"Index of" "backup-audio-queue.log" OR "backup-audio.log" OR "backup-mysql.log"
+intitle:"Index of" "ca-key.pem" OR "ca-req.pem"
+intitle:"index of" "admin.jsp"
+intitle:"index of" "postgresql.conf"
+intitle:"index of" "users.txt"
+intitle:"index of" "token_info.json" OR "get_access_token.json"
+intitle:"index of" "queue.log"
+intitle:"index of" "manage.py"
+intitle:"index of" "debian-security.log"
+intitle:"index of" "google-api-private-key.json"
+intitle:"index of" "config.pl"
+intitle:"Index of" test.logs
+intitle:"index of" "oauth-credentials.json"
+intitle:"index of" "cfg.go"
+intitle:"index of" "login.docx"
+intitle:"index of" "security.json"
+intitle:"index of" "config.rb"
+intitle:"index of" "secrets.py"
+intitle:"index of" "local.json"
+intitle:"index of" "config.js"
+intitle:"index of" "auth.asc"
+intitle:"index of" "web.log" OR "web.logs"
+intitle:"index of" "backup.js"
+intitle:"index of" "login.txt"
+intitle:"index of" "keys.asc"
+intitle:"index of" "auth.log"
+intitle:"index of" users.bak
+inurl:administrator/components/com_comprofiler/plugin.class.php?mosConfig_absolute_path=
+intitle:"index of" "Logins.txt"
+intitle:"index of" "secret.js"
+intitle:"index of" "/config.bak"
+intitle:"index of" "admin.bak"
+intext:"laravel" ext:env intext:"db_password" -git
+intitle:"index of" "/yum.log"
+intitle:"index of" "settings.yaml"
+intitle:"index of" "client_id.json"
+intitle:"index of" "/users.xls"
+intitle:"index of" "api.yaml"
+intitle:"index of" "accounts.json"
+intitle:"index of" dataSources.local.xml
+intitle:"index of" "/accounts.txt"
+intitle:"index of" "database.json"
+intitle:"index of" "users.ini"
+intitle:"index of" apis.json
+intitle:"index of" admin.txt
+intitle:"index of" "docker-cloud.yml"
+intitle:"index of" "parameters.yml.test" OR "parameters.yml.dist"
+intitle:"index of" "application.yml"
+intitle:"index of" "keys.ini"
+intitle:"index of" settings.xml
+intitle:"index of" "credentials.json"
+"settings.ini" intext:"fbconnectkey =" intext:"msverify ="
+intitle:"index of" "client_secret.json" OR "client secret" OR "client_secret live.json"
+intitle:"index of" "token.json"
+intitle:"index of" /insecure_private_key
+intitle:"index of" "dovecot.key" OR "dovecot.crt.cache" OR "dovecot.crt"
+intitle:"index of" license-key.txt
+intitle:"index of" "credentials.ini"
+intitle:"index of" db.json
+intitle:"index of" machine.config
+intitle:"index of" /.ssh/id_rsa OR id_rsa.pub
+intitle:"index of" apache.log
+intitle:"index of" /known_hosts
+intitle:"index of" keepass.kdbx OR database.kdbx
+intitle:"index of" "syslog"
+intitle:"index of" "/cron.log"
+intitle:"Index of" db.inc
+"DBPassword" ext:cfg OR ext:log OR ext:txt OR ext:sql -git
+intitle:"Index of" db_mysql.inc
+"SecretAccessKey" OR "AccessKeyId" ext:txt OR ext:cfg -git
+"-----BEGIN CERTIFICATE-----" ext:pem -git
+intitle:"index of" errorlog.txt
+"-----BEGIN OpenVPN Static key V1-----" ext:key
+intitle:"index of" "vpn-config.*"
+intext:"Current Configuration:" ext:cfg -git
+intitle:"index of" default.rdp
+intitle:"index of" cvsweb.conf
+filetype:reg reg [HKEY_CURRENT_USERSoftware] -git
+filetype:reg reg HKEY_USERS -git
+filetype:reg reg HKEY_CLASSES_ROOT -git
+ext:cfg tac_plus.cfg
+inurl:cfg intext:"srb.username.1=" "srb.password.1 = "
+intitle:"index of" "mysql.properties"
+inurl:-cfg intext:"password cipher"
+intext:"dspace.cfg" "db.username = dspace"
+intext:"index of /" "token.yml"
+"# Kickstart" filetype:cfg
+intitle:"index of" database.yml
+intitle:"index of" "configuration.yml"
+intitle:"index of" "backup.bak"
+intitle:"index of" "backup.yml"
+intitle:"index of" "settings.yml"
+intitle:"index of" "secrets.yml"
+intitle:"index of" "access_token"
+intitle:"index of" accounts.xml
+intitle:"index of" "settings.py"
+intitle:"index of" "php.ini"
+intext:"index of /" "auth.json"
+intitle:"index of" /"privatekey.txt" OR "private key.txt"
+intitle:index.of "cacert.pem"
+intitle:"index of/" "db.sql"
+intitle: index of "*db.tar.gz"
+intitle:"index of" "smtp.log"
+intitle:"index of" "env.bak"
+intitle:index.of "awsconfig.json"
+intext:"SECRET_KEY" ext|py inurl:mysite -site:stackoverflow.com -site:github.com
+intitle:"index.of" intext:"api.txt"
+intitle:index.of "keys.txt"
+intitle:"index.of" intext:"access.txt"
+accdb OR accde intitle:"index of" -pub -google -books
+filetype:env intext:APP_NAME
+accdb OR accde intitle:"index of" -pub -google -books
+-pub -pool intitle:"index of" db.key OR server.key OR ftp.key OR exchange.key OR host.key OR mail.key
+intitle:"index of" lesshsQ/ OR .lesshst/ -pool -pub
+intitle:"index of" ticket.conf
+intitle:"index of" crontab.conf
+"fetchmailrc" intitle:"index of" -linux
+inurl:"_notes/dwsync.xml"
+intitle:"index of" "wp-security-audit-log"
+"MailChimp API error:" ext:log
+inurl:"/fmi/webd" intitle:"FileMaker WebDirect"
+[ipn] ext:log
+inurl:"web.config" & intext:"Data Source" & "User ID" & "Password" & "connectionString" & ext:config -git
+Navicat MySQL Data Transfer filetype:sql
+ext:sql intext:@gmail.com intext:e10adc3949ba59abbe56e057f20f883e
+filetype:"xls | xlsx | doc | docx | ppt | pptx | pdf" site:gov "FOUO" | "NOFORN" | "Confidential"
+intext:"@outlook.com" ext:log
+intitle:"index of" "mail.log"
+intext:"@gmail.com" ext:log
+intitle:index.of "access.conf"
+intitle:"index of" "ssh.yml"
+intitle:"index of" "databases.yml"
+intitle:index.of "private-key.pem"
+intitle:"index of" inurl:ftp intext:logs
+db_password filetype:env -site:github.com -git
+intitle:index.of "key.txt"
+intitle:index.of "credential.txt"
+"accounts.xlsx" ext:xlsx
+intitle:index.of "userpass.txt"
+site:mypublicinbox.com intitle:email
+site:*.freshservice.com/support/solutions
+inurl:"/.vscode/sftp.json"
+inurl:"/.vscode/ftp-sync.json"
+intitle:"Index Of" intext:sftp-config.json
+intitle:"index of" "web.config.txt"
+site:*/wp-settings.php
+site:*/logs/error.log
+site:*/*/conf/httpd.conf
+inurl:credentials.txt -github -git -gitlab
+site:ftp.*.* index of: manifest.xml
+index.of "crossdomain.xml"
+intitle:"index of" "debian.conf"
+intitle:"index of" inurl:/*sql* filetype:log
+intitle:"index of" "/mysql.log"
+inurl:/application/config/database.php*
+site:*/sitemap/sitemap.xml
+"Scanned by Camscanner" filetype:pdf
+inurl: /config.txt ext:txt intext:
+site:*/phpMyAdmin/robots.txt
+site:*/robots.txt intext:User-agent:
+site:*/log/access_log
+intitle:"index of" "debian.cnf"
+ext:sql intext:"-- phpMyAdmin SQL Dump" -site:github.*
+intitle:index.of.?.config.ini
+site:docs.google.com inurl:forms | viewanalytics intext:see previous responses
+site:*/phpinfo.php intitle:"phpinfo()"
+ext:sql intext:contrasena
+ext:sql intext:clave
+inurl:robots.txt site:gov + intext:password
+s3 site:amazonaws.com filetype:log
+intitle:"Index of" pass.txt
+inurl:/filedown.php?file=
+filetype:xls "nomina"
+site:*.com intitle:"Thank You For Your Order" intext:Click Here to Download
+site:https://docs.google.com/spreadsheets edit
+site:https://docs.google.com/spreadsheets responses
+site:https://docs.google.com/forms viewanalytics
+site:https://docs.google.com/forms responses
+inurl:"paypal.log" ext:log
+MAIL_HOST filetype:env
+intitle:"index of" unattend.xml
+site:https://docs.google.com/document/d/ password
+site:https://docs.google.com/spreadsheets/d/ password
+DB_USERNAME filetype:env
+inurl:old "index of" "wp-config.php"
+s3 site:amazonaws.com filetype:sql
+intitle:"index of" "W3SVC1"
+"/FTPSVC2" intitle:"index of"
+intext:user.sql intitle:index.of
+intext:backup.sql intitle:index.of
+s3 site:amazonaws.com filetype:xls login
+filetype:inc php -site:github.com -site:sourceforge.net
+inurl:github.com intext:.ftpconfig -issues
+site:global.gotomeeting.com inurl:recording
+"keyed alike" site:gov filetype:pdf
+intext:"config" intitle:"Index of .ssh"
+"php class JConfig" AND inurl:configuration AND ext:"bak | old | pdf | php | txt"
+jmeter.log filetype:log
+intext:"the WordPress" inurl:wp-config ext:txt
+intext:"@gmail.com" AND intext:"@yahoo.com" filetype:sql
+"passport" filetype:xls site:"*.edu.*" | site:"*.gov.*" | site:"*.com.*" | site:"*.org.*" | site:"*.net.*" | site:"*.mil.*"
+ext:txt | ext:sql | ext:cnf | ext:config | ext:log & intext:"admin" | intext:"root" | intext:"administrator" & intext:"password" | intext:"root" | intext:"admin" | intext:"administrator"
+intext:[To Parent Directory] & ext:sql | ext:cnf | ext:config | ext:log
+inurl:_vti_bin/sites.asmx?wsdl | intitle:_vti_bin/sites.asmx?wsdl
+inurl:/files/_log/ filetype:log
+intext:reports filetype:cache
+inurl:pipermail filetype:txt
+inurl:scanned & documents intitle:"index of" IT
+intitle:"index of" hosts.csv | firewalls.csv | linux.csv | windows.csv
+intitle:"index of" "hiberfil.sys"
+intitle:"index of" users.csv | credentials.csv | accounts.csv
+inurl:"/cgi-bin/WS_FTP.LOG"
+intext:"Portador do CPF"
+inurl:apspassword
+filetype:doc "Answer Key"
+filetype:pub "ssh-rsa"
+filetype:txt "Registration Code"
+intext:password "Login Info" filetype:txt
+inurl:LOG.txt X-System folder
+"site:ghostbin.com " / " "
+"site:hastebin.com " / " "
+filetype:rdp default.rdp
+filetype:txt "License Key"
+intitle:"index of" pagefile.sys
+inurl:/_vti_pvt/service.cnf | inurl:/_vti_inf.html | inurl:/_vti_bin/ | inurl:/_vti_bin/spsdisco.aspx
+intext:"Resource dumped by" intext:jcr -site:adobe.com
+ext:env intext:APP_ENV= | intext:APP_DEBUG= | intext:APP_KEY=
+"[HKEY_CURRENT_USERSoftwareSimonTathamPuTTYSessions]" ext:reg
+filetype:txt line vty 0 4
+intext:Modified files in JOE when it aborted on JOE was aborted because the terminal closed
+intext:"please find attached" "login" | password ext:pdf
+configuration> + filetype:config -github.com
+inurl:logs/gravityforms
+inurl:robots.txt intext:Disallow: /web.config
+/var/www/manage/storage/logs/laravel- ext:log
+inurl:/yum.log | intitle:yum.log + ext:log
+intitle:"index of" intext:twr.html
+intext:"class JConfig {" inurl:configuration.php
+intext:"define('DB_NAME'," ext:txt
+inurl:/wp-json/wp/v2/users/ "id":1,"name":" -wordpress.stackexchange.com -stackoverflow.com
+inurl:/wp-content/ai1wm-backups + wpress
+intext:"PHP Version " ext:php intext:"disabled" intext:"Build Date" intext:"System" intext:"allow_url_fopen"
+ext:ppk ssh key -github.com -gitlab
+inurl:conf/tomcat-users.xml -github
+inurl:elmah.axd intext:"Powered by ELMAH" -inurl:detail
+inurl:login.php.bak
+intitle:"index of" ".travis.yml" | ".travis.xml"
+intitle:"index of" "laravel.log" | "main.yaml" | "server.cfg"
+intext:APIKey ext:js | xml | yml | txt | conf | py -github -stackoverflow intitle:"index of"
+intitle:"index of" ".gitignore"
+intitle:"index of" "config.yml" | "config.xml" intext:login | auth
+swiftmailer intitle:"index of" "smtp.yml" | "smtp.xml"
+intitle:"index of" "config.yml" | "config.xml" intext:login | auth
+inurl:lighttpd.conf lighttpd site:github.com
+-site:smarty.net ext:tpl intext:"
+employee "training" intitle:index.of ext:doc | pdf | xls |docx |xlsx
+hardware | software "migration" intitle:index.of ext:xls | xlsx | doc | docx | pdf
+ext:log intext:"connection" intitle:"index of" -stackoverflow
+inurl:nginx.conf nginx site:github.com
+intext:"successfully" intitle:"index of" config | log | logged -stackoverflow
+inurl:travis.yml tornado site:github.com
+"var miner=new CryptoLoot.Anonymous" intext:CryptoLoot.Anonymous
+inurl:"/p3p.xml" | intitle: "p3p.xml" -github.com
+"air confirmation" "passenger(s)"
+inurl:"debug/default/view?panel=config"
+inurl:"root?originalDomain"
+filetype:txt Administrator:500:
+intext:vmware virtual site:.gov filetype:xls | xlsx | doc | pdf
+filetype:xls | xlsx intext:software license site:.gov
+filetype:xls | xlsx intext:cisco -cisco.com site:.gov
+intitle:"This is pdfTeX, Version"
+intext:cv OR intext:curriculum vitae "passport details" ext:doc -template
+allintitle:restricted filetype:doc site:gov
+filetype:gitattributes intext:CHANGELOG.md -site:github.com
+filetype:env intext:AWS_SECRET
+filetype:env intext:mail_host + intext:bluehost
+AndroidManifest ext:xml -github -gitlab -googlesource
+inurl:"?db_backup" | inurl:"dbbackup" -site:github.com "sql.gz" | "sql.tgz" | "sql.tar" | "sql.7z"
+inurl:fisheye AND inurl:changelog -site:atlassian.com -site:github.com -intext:"Log in to FishEye"
+intitle:"Powered by Qualys SSL Labs"
+ext:txt {"wallet_address" :", "pool_address" : " ", "pool_password" -git
+inurl:..//drivers/etc/ intitle:index of
+inurl:/daten/webyep-log.txt
+inurl:/.well-known/security.txt
+inurl:"/bigdump.php" + intitle:"BigDump ver."
+ext:adr adr filetype:adr "bookmarks.adr"
+inurl:"/Setup/Default.aspx" "mojoPortal"
+intitle:"index.of.virtualbox" -mirror -mirrors -public -ubuntu.com -edu -pub
+"Declassified and Approved for Release by" filetype: pdf
+intitle:"Index of /logs/" "lighttpd"
+filetype:env intext:"APP_ENV"
+filetype:log inurl:"log" "[SERVER_SOFTWARE]"
+intitle:"Deluge: Web UI" inurl:":8112"
+intitle:"Deluge: Web UI 1.3"
+CakePHP filetype:sql intext:password | pwd intext:username | uname intext: Insert into users values
+intext:"[***] Results from" + ext:txt + "snort-"
+intext:database inurl:"laravel.log" ext:log
+dwsync.xml intitle:index of -gitlab -github
+allinurl:mc4wp-debug.log ext:log
+config.yaml intitle:"index of" vagrantfile
+intitle:"index of" inurl:"paypal" log
+intitle:"index of" intext:"pip-selfcheck.json"
+intitle:"Proberv0." | inurl:/proberv.php
+inurl:/?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000 | inurl:/?=PHPE9568F35-D428-11d2-A769-00AA001ACF42
+intitle:"index of" .env
+intitle:"index of" docker-compose.yml
+inurl:/gravity_forms/logs ext:txt
+filetype:sql intext:password | pass | passwd intext:username intext:INSERT INTO `users` VALUES
+intext:"Dr.Web (R) Anti-virus. Virus base add-on" + ext:txt
+inurl:"/etc/fail2ban/" + ext:conf
+ext:pem "PRIVATE KEY" -site:facebook.com -example -test*
+inurl:/fantastico_fileslist.txt + ext:txt
+allinurl:awstats.pl?config=
+inurl:"plesk-stat"
+inurl:"/xmlrpc.php?rsd" & ext:php
+"[LocalizedFileNames]" inurl:"desktop.ini" ext:ini -git -wiki
+"[Tera Term]" inurl:"teraterm.ini" ext:ini -git
+allintitle:"Forum Post Assistant :" ext:php -site:joomla.org
+inurl:"main.php?action=db"
+inurl:module=coreHome
+intitle:index.of intext:zc_install intitle:zen-cart
+"Email delivery powered by Google" ext:pdf OR ext:txt
+intitle:"PHP Web Stat - Sysinfo" intext:php inurl:stat/sysinfo.php
+"SiteBar Bookmark Manager" inurl:index.php?w=
+inurl:"test/php/test.html" Plesk File
+intitle:"rutorrent v3" AND intext:Uploaded -github.com
+intitle:Kodi inurl:":8080" "Music. Music;"
+intitle:"Chorus 2 - Kodi web interface"
+ext:pdf intext:"Category: Password Management: Hardcoded Password" intext:"Issues)"
+intext:----- Begin SAP License ----- ext:txt
+"Start of NVIDIA bug report log file" ext:log
+"Do not distribute" (ext:pdf | ext:doc | ext:docx | ext:rtf)
+intext:"Set objConn=Server.CreateObject("ADODB.Connection")" ext:asp
+intext:Server.MapPath(".mdb") ext:asp
+"OTL Extras logfile created on:" ext:txt
+inurl:composer.json filetype:json -site:github.com
+intext:"softperms.txt" ext:TXT
+"-- Dumping data for table" ext:sql
+inurl:"/horde/test.php"
+inurl:wp-links-opml.php
+inurl:"wp-security-audit-log" ext:log
+inurl:/Divi/Changelog.txt /Divi/Changelog.txt
+ext:txt | ext:conf | ext:inc | ext:doc intext:php class JConfig
+"QuickDiag" "by g3n-h@ckm@n" ext:txt
+"OTL logfile" "by OldTimer" ext:txt
+inurl:FileListAbsolute ext:txt
+filetype:tpl intext:mysql_connect
+ext:asax
+inurl:".hg/store/fncache"
+ext:vbproj
+ext:csproj
