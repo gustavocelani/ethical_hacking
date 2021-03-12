@@ -5,6 +5,7 @@
 * [LES - Linux Privilege Escalation Auditing Tool](#LES)
 * [OpenBoleto](#OpenBoleto)
 * [OpenVAS](#OpenVAS)
+* [Sherlock](#Sherlock)
 
 
 <a name="PayloadsAllTheThings"></a>
@@ -38,9 +39,14 @@ So you can recognize the misconfigurations easily.
 ### Basic Usage
 
 ```
+# Download Script
 $ $ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh
+
+# Run Script
 $ chmod +x linpeas.sh
 $ ./linpeas.sh -a > linpeas_output.txt
+
+# Read Output
 $ less -r linpeas_output.txt
 ```
 
@@ -68,7 +74,10 @@ This functionality is modern continuation of --kernel switch from checksec.sh to
 ### Basic Usage
 
 ```
+# Download Script
 $ wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O les.sh
+
+# Run Script
 $ chmod +x les.sh
 $ ./les.sh
 ```
@@ -86,13 +95,17 @@ O foco é ser simples e ter uma arquitetura compatível com os recursos mais mod
 ### Basic Usage
 
 ```
+# Download
 $ git clone https://github.com/openboleto/openboleto.git
 $ cd ./openboleto/samples/
 
 # Edit fields of your chosen emitter (Banco do Brasil in this example)
 $ vi banco_do_brasil.php
 
+# Execute PHP
 $ php banco_do_brasil.php > /tmp/boleto.html
+
+# Read Output
 $ firefox /tmp/boleto.html &
 ```
 
@@ -130,5 +143,29 @@ Password: 5aae84fa-f1ec-409d-bf2b-24e3bbc38595
 # Stop Daemon
 $ sudo gvm-stop
 ```
+
+
+
+<a name="Sherlock"></a>
+# Sherlock
+
+**Repository**: [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock)  
+**WebSite**: [sherlock-project.github.io](https://sherlock-project.github.io/)
+
+Sherlock can be used to find usernames across many social networks.  
+It requires Python 3.6 or higher and works on MacOS, Linux and Windows.
+
+### Basic Usage
+
+```
+# Installation
+$ git clone https://github.com/sherlock-project/sherlock.git
+$ cd sherlock
+$ python3 -m pip install -r requirements.txt
+
+# Looking for user: gustavocelani
+$ python3 sherlock --timeout 3 gustavocelani
+```
+
 
 ________________________
