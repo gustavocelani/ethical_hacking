@@ -6,6 +6,7 @@
 * [OpenBoleto](#OpenBoleto)
 * [OpenVAS](#OpenVAS)
 * [Sherlock](#Sherlock)
+* [SpiderFoot](#SpiderFoot)
 
 
 <a name="PayloadsAllTheThings"></a>
@@ -167,5 +168,46 @@ $ python3 -m pip install -r requirements.txt
 $ python3 sherlock --timeout 3 gustavocelani
 ```
 
+
+
+<a name="SpiderFoot"></a>
+# SpiderFoot
+
+**Repository**: [smicallef/spiderfoot](https://github.com/smicallef/spiderfoot)
+
+**SpiderFoot** is an open source intelligence (OSINT) automation tool.  
+It integrates with just about every data source available and utilises a range of methods for data analysis, making that data easy to navigate.  
+SpiderFoot has an embedded web-server for providing a web-based interface but can also be used completely via the command-line.  
+This is also embedded by default in Kali Linux.
+
+### Basic Usage - Kali Linux
+
+```
+# Running
+$ spiderfoot -l 127.0.0.1:5001
+
+# Accessing
+$ firefox 127.0.0.1:5001
+```
+
+### Basic Usage - External Installation
+
+```
+# Download last stable version
+$ wget https://github.com/smicallef/spiderfoot/archive/v3.3.tar.gz
+
+# Extracting
+$ tar zxvf v3.3.tar.gz
+$ cd spiderfoot
+
+# Inslling requirements
+$ pip3 install -r requirements.txt
+
+# Running
+$ python3 ./sf.py -l 127.0.0.1:5001
+
+# Accessing
+$ firefox 127.0.0.1:5001
+```
 
 ________________________
