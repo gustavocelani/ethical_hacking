@@ -2,7 +2,8 @@
 
 * [Payloads All The Things](#PayloadsAllTheThings)
 * [PEASS - Privilege Escalation Awesome Scripts Suite](#PEASS)
-* [LES - Linux Privilege Escalation Auditing Tool](#LES)
+* [LES - Linux Exploit Suggester](#LES)
+* [GTFOBins](#GTFOBins)
 * [OpenBoleto](#OpenBoleto)
 * [OpenVAS](#OpenVAS)
 * [Nessus](#Nessus)
@@ -42,7 +43,7 @@ So you can recognize the misconfigurations easily.
 
 ```
 # Download Script
-$ $ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh
+$ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O linpeas.sh
 
 # Run Script
 $ chmod +x linpeas.sh
@@ -54,7 +55,7 @@ $ less -r linpeas_output.txt
 
 
 <a name="LES"></a>
-# LES - Linux Privilege Escalation Auditing Tool
+# LES - Linux Exploit Suggester
 
 **Repository**: [mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
 
@@ -83,6 +84,16 @@ $ wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/li
 $ chmod +x les.sh
 $ ./les.sh
 ```
+
+
+
+<a name="GTFOBins"></a>
+# GTFOBins
+
+**Repository**: [GTFOBins](https://gtfobins.github.io/)
+
+GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
+
 
 
 <a name="OpenBoleto"></a>
