@@ -9,6 +9,8 @@
 * [Nessus](#Nessus)
 * [Sherlock](#Sherlock)
 * [SpiderFoot](#SpiderFoot)
+* [CrackStation](#CrackStation)
+* [Hash Identifier](#HashIdentifier)
 
 
 <a name="PayloadsAllTheThings"></a>
@@ -253,5 +255,34 @@ $ python3 ./sf.py -l 127.0.0.1:5001
 # Accessing
 $ firefox 127.0.0.1:5001
 ```
+
+
+
+<a name="HashIdentifier"></a>
+# Hash Identifier
+
+**Repository**: [HashId](https://gitlab.com/kalilinux/packages/hashid)
+
+### Basic Usage
+```
+$ hashid -mj <hash>
+```
+
+### Online Hash Identifier
+
+**WebSite**: [Tunnels UP](https://www.tunnelsup.com/hash-analyzer/)
+**WebSite**: [Hashes](https://hashes.com/en/tools/hash_identifier)
+**WebSite**: [OnlineHashCrack](https://www.onlinehashcrack.com/hash-identification.php)
+
+
+
+<a name="CrackStation"></a>
+# CrackStation
+
+**WebSite**: [CrackStation](https://crackstation.net/)
+
+**CrackStation** is a free password hash cracker.  
+It uses massive pre-computed lookup tables to crack password hashes.  
+These tables store a mapping between the hash of a password, and the correct password for that hash.
 
 ________________________
