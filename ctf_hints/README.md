@@ -2,84 +2,38 @@
 # Table of Contents
 
 * [Networking](#Networking)
-    * [Host Discovery](#Host-Discovery)
 * [Port Scanning](#Port-Scanning)
-    * [Nmap](#Nmap)
 * [WEB Analysis](#WEB-Analysis)
-    * [Nikto](#Nikto)
-    * [Dirb](#Dirb)
-    * [GoBuster](#GoBuster)
 * [WordPress](#WordPress)
-    * [Analysis](#Analysis)
-    * [Update Datase Password Hash](#Update-Datase-Password-Hash)
 * [AWS S3](#AWS-S3)
-    * [List Bucket Files](#List-Bucket-Files)
-    * [Download File](#Download-File)
 * [WEB Server](#WEB-Server)
 * [XSS](#XSS)
-    * [Validation](#Validation)
-    * [Acquiring-Cookies](#Acquiring-Cookies)
 * [SQL Injection](#SQL-Injection)
-    * [Analysis](#Analysis)
-    * [Navigation](#Navigation)
 * [HTTP](#HTTP)
-    * [URL Scapping](#URL-Scapping)
-    * [Reverse Shell Example](#Reverse-Shell-Example)
 * [FTP](#FTP)
 * [SMB](#SMB)
 * [Pop3](#Pop3)
 * [SSH](#SSH)
 * [SCP](#SCP)
 * [MySQL](#MySQL)
-    * [Connection](#Connection)
-    * [Actions](#Actions)
 * [NFS](#NFS)
-    * [List Mount Points](#List-Mount-Points)
-    * [Mount](#Mount)
-    * [Umount](#Umount)
 * [RDP](#RDP)
 * [Hash Analysis](#Hash-Analysis)
-    * [Hash Identifier](#Hash-Identifier)
-    * [HashID](#HashID)
 * [Brute Force](#Brute-Force)
-    * [Hash](#Hash)
-    * [SSH](#SSH)
-    * [ZIP](#ZIP)
-    * [WordPress Login](#WordPress-Login)
-    * [Pop3](#Pop3)
-    * [MySQL](#MySQL)
 * [Shell Spawn](#Shell-Spawn)
-    * [Python](#Python)
 * [SUID](#SUID)
 * [Sudo](#Sudo)
-    * [List Policy](#List-Policy)
-    * [Run as User](#Run-as-User)
 * [Sudoers](#Sudoers)
 * [Netcat](#Netcat)
-    * [Listen](#Listen)
-    * [Reverse Shell Using Backpipe](#Reverse-Shell-Using-Backpipe)
 * [Payloads](#Payloads)
-    * [Linux Reverse Python Raw](#Linux-Reverse-Python-Raw)
 * [Linux Password](#Linux-Password)
-    * [Password Hash](#Password-Hash)
 * [Custom Wordlists](#Custom-Wordlists)
-    * [Cewl](#Cewl)
 * [Steganography](#Steganography)
-    * [Exiftool](#Exiftool)
-    * [Steghide](#Steghide)
 * [Crontab](#Crontab)
-    * [List Jobs](#List-Jobs)
-    * [Edit](#Edit)
-* [Encoding - Base64](#Encoding---Base64)
-    * [Encoding](#Encoding)
-    * [Decoding](#Decoding)
-* [Encoding - Base32](#Encoding---Base32)
-    * [Encoding](#Encoding)
-    * [Decoding](#Decoding)
+* [Base64](#Base64)
+* [Base32](#Base32)
 * [GPG](#GPG)
-    * [Decrypt](#Decrypt)
 * [OpenSSL](#OpenSSL)
-    * [Decrypt RSA](#Decrypt-RSA)
 * [Binary to ASCII](#Binary-to-ASCII)
 * [Hex to ASCII](#Hex-to-ASCII)
 * [ASCII to Char](#ASCII-to-Char)
@@ -629,7 +583,7 @@ crontab -e
 
 
 
-# Encoding - Base64
+# Base64
 
 ### Encoding
 
@@ -649,7 +603,7 @@ cat {FILE} | base64 -d
 echo "{DATA}" | base64 -d
 ```
 
-# Encoding - Base32
+# Base32
 
 ### Encoding
 
