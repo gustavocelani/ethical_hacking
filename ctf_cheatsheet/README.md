@@ -235,6 +235,12 @@ sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIEL
 # PHP Uploading Bypass
 
 ```
+# .php
+# .php3
+# .php4
+# .php5
+# .phtml
+
 mv reverse_shell.php reverse_shell.phtml
 ```
 
