@@ -39,6 +39,23 @@
 * [ASCII to Char](#ASCII-to-Char)
 * [Extract All File in Directory](#Extract-All-File-in-Directory)
 * [Directory Files Iteration](#Directory-Files-Iteration)
+* [Metasploit](#Metasploit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Networking
 
@@ -67,11 +84,21 @@ nmap -p {MIN}-{MAX} {TARGET}
 nmap -p- {TARGET}
 
 # Complete Scan
-nmap -AT4 -p- {TARGET}
+nmap -A -T4 -p- {TARGET}
 
-# Script Scan
+# SYN Scan
+nmap -sS -T4 -p- {TARGET}
+
+# Script Scan Default
+nmap --script=default {TARGET}
+
+# Script Scan Vulnerabilities
 nmap --script=vuln {TARGET}
+
+# Search Nmap Scripts
+ls -lah /usr/share/nmap/scripts
 ```
+
 
 
 
@@ -730,4 +757,122 @@ for file in filesList:
 for file in ./path/*.txt ; do
 	echo ${file}
 done
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Metasploit
+
+### Initializing
+```
+# Init DB
+msfdb init
+
+# Start Metasploit Console
+msfconsole
+
+# Check DB Status
+db_status
+```
+
+### Core Commands
+```
+# Test Target Connection
+connect {TARGET}
+
+# Search
+search {DATA}
+
+# Module Info
+info {MODULE_PATH}
+
+# Select Module
+use {MODULE_PATH}
+```
+
+### Sessions
+```
+# Background Current Session
+CRTL + Z
+
+# Show Sessions List
+sessions
+
+# Interact with Session
+sessions -i {SESSION_ID}
+```
+
+### Internal NMAP
+```
+# Scan Example
+db_nmap -sV {TARGET}
+
+# Hosts Table
+hosts
+
+# Services Table
+services
+
+# Vulnerabilities Table
+vulns
+```
+
+### Meterpreter
+```
+# System Info
+sysinfo
+
+# Get Current User
+getuid
+
+# Get Current Privileges
+getprivs
+
+# List Processes
+ps
+
+# Process Migration
+migrate {PID}
+
+# Run Exploit Suggester
+run post/multi/recon/local_exploit_suggester
+
+# Enable Windows RDP
+run post/windows/manage/enable_rdp
+
+# Shell Spwan
+shell
+
+# Retrive Stored Hashes
+hashdump
+
+# Modify Timestamps of System Files
+timestomp
+```
+
+### Mimikatz (Kiwi)
+```
+# Load on Meterpreter
+load kiwi
+
+# Retrieve All Credentials
+creds_all
+
+# Persistence
+golden_ticket_create
 ```
