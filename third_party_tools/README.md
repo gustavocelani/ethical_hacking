@@ -1,8 +1,8 @@
 # Third Party Tools
 
-* [Payloads All The Things](#PayloadsAllTheThings)
-* [PEASS - Privilege Escalation Awesome Scripts Suite](#PEASS)
-* [LES - Linux Exploit Suggester](#LES)
+* [Payloads All The Things](#Payloads-All-The-Things)
+* [Privilege Escalation Awesome Scripts Suite](#Privilege-Escalation-Awesome-Scripts-Suite)
+* [Linux Exploit Suggester](#Linux-Exploit-Suggester)
 * [GTFOBins](#GTFOBins)
 * [OpenBoleto](#OpenBoleto)
 * [OpenVAS](#OpenVAS)
@@ -10,10 +10,9 @@
 * [Sherlock](#Sherlock)
 * [SpiderFoot](#SpiderFoot)
 * [CrackStation](#CrackStation)
-* [Hash Identifier](#HashIdentifier)
 
 
-<a name="PayloadsAllTheThings"></a>
+
 # Payloads All The Things
 
 **Repository**: [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
@@ -22,8 +21,7 @@ A list of useful payloads and bypasses for Web Application Security.
 Feel free to improve with your payloads and techniques!
 
 
-<a name="PEASS"></a>
-# PEASS - Privilege Escalation Awesome Scripts Suite
+# Privilege Escalation Awesome Scripts Suite
 
 **Repository**: [carlospolop/privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
 
@@ -49,15 +47,14 @@ $ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesom
 
 # Run Script
 $ chmod +x linpeas.sh
-$ ./linpeas.sh -a > linpeas_output.txt
+$ ./linpeas.sh | tee linpeas_output.txt
 
 # Read Output
 $ less -r linpeas_output.txt
 ```
 
 
-<a name="LES"></a>
-# LES - Linux Exploit Suggester
+# Linux Exploit Suggester
 
 **Repository**: [mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
 
@@ -89,7 +86,6 @@ $ ./les.sh
 
 
 
-<a name="GTFOBins"></a>
 # GTFOBins
 
 **Repository**: [GTFOBins](https://gtfobins.github.io/)
@@ -98,7 +94,6 @@ GTFOBins is a curated list of Unix binaries that can be used to bypass local sec
 
 
 
-<a name="OpenBoleto"></a>
 # OpenBoleto
 
 **Repository**: [openboleto/openboleto](https://github.com/openboleto/openboleto)
@@ -126,7 +121,6 @@ $ firefox /tmp/boleto.html &
 
 
 
-<a name="OpenVAS"></a>
 # OpenVAS
 
 **Repository**: [greenbone/openvas-scanner](https://github.com/greenbone/openvas-scanner)  
@@ -161,7 +155,6 @@ $ sudo gvm-stop
 
 
 
-<a name="Nessus"></a>
 # Nessus
 
 **WebSite**: [tenable/products/nessus](https://www.tenable.com/products/nessus)  
@@ -193,7 +186,6 @@ $ sudo systemctl stop nessusd.service
 
 
 
-<a name="Sherlock"></a>
 # Sherlock
 
 **Repository**: [sherlock-project/sherlock](https://github.com/sherlock-project/sherlock)  
@@ -216,7 +208,6 @@ $ python3 sherlock --timeout 3 gustavocelani
 
 
 
-<a name="SpiderFoot"></a>
 # SpiderFoot
 
 **Repository**: [smicallef/spiderfoot](https://github.com/smicallef/spiderfoot)
@@ -258,25 +249,6 @@ $ firefox 127.0.0.1:5001
 
 
 
-<a name="HashIdentifier"></a>
-# Hash Identifier
-
-**Repository**: [HashId](https://gitlab.com/kalilinux/packages/hashid)
-
-### Basic Usage
-```
-$ hashid -mj <hash>
-```
-
-### Online Hash Identifier
-
-**WebSite**: [Tunnels UP](https://www.tunnelsup.com/hash-analyzer/)
-**WebSite**: [Hashes](https://hashes.com/en/tools/hash_identifier)
-**WebSite**: [OnlineHashCrack](https://www.onlinehashcrack.com/hash-identification.php)
-
-
-
-<a name="CrackStation"></a>
 # CrackStation
 
 **WebSite**: [CrackStation](https://crackstation.net/)

