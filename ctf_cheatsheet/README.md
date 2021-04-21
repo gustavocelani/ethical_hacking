@@ -35,6 +35,8 @@
 * [Base32](#Base32)
 * [GPG](#GPG)
 * [OpenSSL](#OpenSSL)
+* [Decimal to ASCII](#Decimal-to-ASCII)
+* [Binary to Decimal](#Binary-to-Decimal)
 * [Binary to ASCII](#Binary-to-ASCII)
 * [Hex to ASCII](#Hex-to-ASCII)
 * [ASCII to Char](#ASCII-to-Char)
@@ -651,6 +653,10 @@ exiftool {FILE}
 ### Steghide
 
 ```
+# Embed Data
+steghide embed -cf {FILE} -ef {DATA_FILE}
+
+# Extract Data
 steghide extract -sF {FILE}
 ```
 
@@ -784,6 +790,38 @@ for bin in $ARRAY
 do
 	dec=$((2#${bin}))
 	echo -ne \\x$(printf %02x $dec)
+done
+```
+
+# Decimal to ASCII
+
+```
+$ cat dec.txt 
+85 110 112 97 99 107 32 116 104 105 115 32 66 67 68
+
+$ cat bin2ascii.sh 
+
+#!/bin/bash
+ARRAY=$(cat $1)
+for dec in $ARRAY
+do
+	echo -ne \\x$(printf %02x $dec)
+done
+```
+
+# Binary to Decimal
+
+```
+$ cat bin.txt
+01100111 01101111 01101111 01100100 00100000 01110111 01101111 01110010
+
+$ cat bin2dec.sh 
+
+#!/bin/bash
+ARRAY=$(cat $1)
+for bin in $ARRAY
+do
+	echo -n "$((2#${bin})) "
 done
 ```
 
