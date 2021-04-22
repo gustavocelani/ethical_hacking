@@ -1,8 +1,10 @@
 # Third Party Tools
 
 * [Payloads All The Things](#Payloads-All-The-Things)
+* [SQLi Payloads List](#SQLi-Payloads-List)
 * [Privilege Escalation Awesome Scripts Suite](#Privilege-Escalation-Awesome-Scripts-Suite)
 * [Linux Exploit Suggester](#Linux-Exploit-Suggester)
+* [Enum4Linux](#Enum4Linux)
 * [GTFOBins](#GTFOBins)
 * [OpenBoleto](#OpenBoleto)
 * [OpenVAS](#OpenVAS)
@@ -19,6 +21,13 @@
 
 A list of useful payloads and bypasses for Web Application Security.  
 Feel free to improve with your payloads and techniques!
+
+
+# Payload Box
+
+**Repository**: [payloadbox](https://github.com/payloadbox)
+
+Attack Payloads Only
 
 
 # Privilege Escalation Awesome Scripts Suite
@@ -82,6 +91,20 @@ $ wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/li
 # Run Script
 $ chmod +x les.sh
 $ ./les.sh
+```
+
+
+
+# Enum4Linux
+
+**Website**: [enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)
+
+A Linux alternative to enum.exe for enumerating data from Windows and Samba hosts.
+
+### Basic Usage
+
+```
+$ enum4linux {TARGET}
 ```
 
 

