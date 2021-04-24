@@ -408,7 +408,7 @@ mysql -u {USER} -h {TARGET} -p {PASSWORD}
 
 ```
 mysql> show databases;
-mysql> user {DATABASE};
+mysql> use {DATABASE};
 mysql> show tables;
 mysql> SELECT {FIELD_1},{FIELD_2} FROM {TABLE};
 ```
@@ -444,6 +444,8 @@ sudo umount {LOCAL_PATH}
 
 ```
 xfreerdp /u:{USER} /p:{PASS} /v:{TARGET}
+
+remmina
 ```
 
 
@@ -495,6 +497,12 @@ john --show {HASH_FILE}
 
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt ssh://{TARGET}
+```
+
+### FTP
+
+```
+hydra -l {USER} -P /usr/share/wordlists/rockyou.txt ftp://{TARGET}
 ```
 
 ### SSH Key
@@ -680,7 +688,14 @@ exiftool {FILE}
 steghide embed -cf {FILE} -ef {DATA_FILE}
 
 # Extract Data
-steghide extract -sF {FILE}
+steghide extract -sf {FILE}
+```
+
+### BinWalk
+
+```
+# Extract Data
+binwalk -e {FILE}
 ```
 
 # Crontab
