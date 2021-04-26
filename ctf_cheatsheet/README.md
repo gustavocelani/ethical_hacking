@@ -59,9 +59,11 @@
 
 * [Base64](#Base64)
 * [Base32](#Base32)
+* [Base58](#Base58)
 * [GPG](#GPG)
 * [OpenSSL](#OpenSSL)
 * [Steganography](#Steganography)
+* [Files Signatures](#Files-Signatures)
 
 ## Scripts
 
@@ -937,6 +939,24 @@ cat {FILE} | base32 -d
 echo "{DATA}" | base32 -d
 ```
 
+# Base58
+
+### Encoding
+```
+base58 {FILE}
+base58 "{DATA}"
+cat {FILE} | base58
+echo "{DATA}" | base58
+```
+
+### Decoding
+```
+base58 -d {FILE}
+base58 -d "{DATA}"
+cat {FILE} | base58 -d
+echo "{DATA}" | base58 -d
+```
+
 # GPG
 
 ### Decrypt
@@ -987,6 +1007,26 @@ binwalk -e {FILE}
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
 chmod +x stegsolve.jar
 java -jar stegsolve.jar
+```
+
+# Files Signatures
+ 
+List of Files Signatures: [garykessler.net](https://www.garykessler.net/library/file_sigs.html)
+
+### Fixing/Changing File Signature
+```
+# File to Hex
+xxd -p {FILE}.ext > {FILE}.hex
+
+# Edit the first bytes to correct signature
+vi {FILE}.hex
+
+# Render file back with CyberChef
+# https://gchq.github.io/CyberChef/
+#
+# Input:    {FILE}.hex
+# Recipe 1: From Hex (Audo)
+# Recipe 2: Render Image (Raw)
 ```
 
 
