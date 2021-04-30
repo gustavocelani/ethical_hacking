@@ -12,6 +12,7 @@
 * [Sherlock](#Sherlock)
 * [SpiderFoot](#SpiderFoot)
 * [CrackStation](#CrackStation)
+* [MD5 Hashing](#MD5-Hashing)
 * [Kerbrute](#Kerbrute)
 * [BloodHound](#BloodHound)
 * [Mimikatz](#Mimikatz)
@@ -284,6 +285,17 @@ $ firefox 127.0.0.1:5001
 **CrackStation** is a free password hash cracker.  
 It uses massive pre-computed lookup tables to crack password hashes.  
 These tables store a mapping between the hash of a password, and the correct password for that hash.
+
+
+
+# MD5 Hashing
+
+**WebSite**: [MD5 Hashing](https://md5hashing.net/)
+
+Generate hash out of the string and lookup for hash value.  
+Get anonymous, random, temporary and disposable email address.  
+Encrypt, store, and share text-data.  
+Quickly identify hash digest type.
 
 
 
