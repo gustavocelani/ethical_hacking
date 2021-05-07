@@ -2,7 +2,7 @@
 
 ## Networking
 
-* [Networking](#Networking)
+* [Host Discovery](#Host-Discovery)
 * [Port Scanning](#Port-Scanning)
 
 ## WEB
@@ -105,9 +105,8 @@
 
 
 
-# Networking
+# Host Discovery
 
-### Host Discovery
 ```
 netdiscover -r {NETWORK}/{MASK}
 ```
