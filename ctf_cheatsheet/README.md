@@ -40,6 +40,7 @@
 * [Shell Spawn](#Shell-Spawn)
 * [Abusing Shell](#Abusing-Shell)
 * [SUID](#SUID)
+* [Capabilities](#Capabilities)
 * [Sudo](#Sudo)
 * [Sudoers](#Sudoers)
 * [Netcat](#Netcat)
@@ -634,6 +635,12 @@ find / -type f -perm -u=s 2>/dev/null
 
 # SUID + GUID
 find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+```
+
+# Capabilities
+
+```
+getcap -r / 2>/dev/null
 ```
 
 # Abusing Shell
