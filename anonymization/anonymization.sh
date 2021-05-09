@@ -45,13 +45,19 @@ _Setup_() {
 
     _validate_path_
 
-    sudo apt-get install -y torbrowser-launcher tor privoxy
+    sudo apt-get install -y torbrowser-launcher tor privoxy proxychains
 
     echo -e "\nBackuping current privoxy config"
     sudo cp -v /etc/privoxy/config /etc/privoxy/config.bpk
-
     echo -e "\nAttempt to replace privoxy config"
     sudo cp -v ./privoxy/config /etc/privoxy/config
+
+    echo -e "\nBackuping current proxychains config"
+    sudo cp -v /etc/proxychains4.conf /etc/proxychains4.conf.bpk
+    sudo cp -v /etc/proxychains.conf /etc/proxychains.conf.bkp
+    echo -e "\nAttempt to replace proxychains config"
+    sudo cp -v ./proxychains/proxychains.conf /etc/proxychains4.conf
+    sudo cp -v ./proxychains/proxychains.conf /etc/proxychains.conf
 }
 
 _Start_() {
@@ -104,8 +110,7 @@ _IP_Info_() {
 
     _title_ "IP Info"
 
-    echo -e "\nPlease, make shure that all firefox applications are closed...\n"
-    proxychains firefox https://ipleak.net/
+    proxychains firefox --new-instance https://ipleak.net/
 }
 
 _Launch_Tor_Browser_() {
@@ -141,8 +146,8 @@ do
         _Start_                "Start Anonymization" \
         _Stop_                 "Stop Anonymization" \
         _Status_               "Anonymization Services Status" \
-        _IP_Test_              "Public IP Test" \
-        _IP_Info_              "Public IP Info" \
+        _IP_Test_              "Torify ifconfig.me" \
+        _IP_Info_              "Proxychains Firefox IP Leak" \
         _Launch_Tor_Browser_   "Launch Tor Browser" \
         _Exit_                 "Exit" )
 
