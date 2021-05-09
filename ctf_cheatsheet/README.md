@@ -315,12 +315,18 @@ ssh -N -L {PORT}:127.0.0.1:{PORT} -i {KEY} {USER}@{TARGET}
 
 # WEB Fuzz
 
+### Parameter
 ```
 # URL Parameter
 wfuzz -c -z file,/usr/share/wordlists/rockyou.txt http://{TARGET}/example/example.php?{PARAMETER}=FUZZ
 
 # POST Data
 wfuzz -c -z file,/usr/share/wordlists/rockyou.txt -d "{PARAMETER_1}=FUZZ&{PARAMETER_2}=FUZZ" -u http://{TARGET}/example.php
+```
+
+### Subdomain
+```
+wfuzz -c --hw 977 -u http://{TARGET} -H "Host: FUZZ.{TARGET}" -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
 ```
 
 # Jserv

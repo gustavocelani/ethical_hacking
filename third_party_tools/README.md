@@ -18,6 +18,7 @@
 * [Mimikatz](#Mimikatz)
 * [CyberChef](#CyberChef)
 * [Wayback Machine](#Wayback-Machine)
+* [QR Code Monkey](#QR-Code-Monkey)
 
 
 
@@ -394,5 +395,13 @@ Vesatile online endocing/secoding tool.
 **WebSite**: [archive.org](https://archive.org/web/)
 
 Websites timeline.
+
+
+
+# QR Code Monkey
+
+**WebSite**: [qrcode-monkey.com](https://www.qrcode-monkey.com/)
+
+The 100% Free QR Code Generator.
 
 ________________________
