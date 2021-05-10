@@ -188,7 +188,6 @@ _Output_() {
         return
     fi
 
-    mkdir -p ${OUTPUT_DIR}
     _update_outputs_
 }
 
@@ -226,6 +225,16 @@ _Setup_() {
 }
 
 _Start_() {
+
+    mkdir -p ${OUTPUT_DIR}
+
+    if [[ ! -d ${OUTPUT_DIR} ]]
+    then
+        echo -e "!!! FAIL !!!\n"
+        echo "Fail to create output directory [ $SCAN_DEFAULT_OUT ]"
+        echo -e "Check the setup and try again...\n"
+        return
+    fi
 
     if [[ "${SCAN_DEFAULT}" == "on" ]]; then _default_scan_; fi
     if [[ "${SCAN_AGGRESSIVE}" == "on" ]]; then _aggressive_scan_; fi
