@@ -27,7 +27,7 @@ $ ./port_scanning.sh
 ### With Arguments
 
 ```
-$ ./port_scanning.sh 10.10.10.10 /my/output/dir
+$ ./port_scanning.sh 10.10.157.177 /home/burton/Downloads/ctf
 ```
 
 ![Alt text](usage2.png?raw=true "Usage with Arguments")
