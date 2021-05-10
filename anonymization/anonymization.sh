@@ -152,6 +152,12 @@ do
         _Exit_                 "Exit" )
 
     clear
+
+    if [[ "${ACTION}" == "" ]]
+    then
+        _Exit_
+    fi
+
     ${ACTION}
     _press_any_key_to_continue_
 done
