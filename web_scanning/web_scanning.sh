@@ -418,7 +418,7 @@ do
             --menu "" \
             0 0 0 \
             _Protocol_  "${PROTOCOL}" \
-            _Target_    "${TARGET_IP}" \
+            _Target_IP_ "${TARGET_IP}" \
             _Port_      "${PORT}" \
             _Output_    "${OUTPUT_DIR}" \
             _GoBuster_  "" \
