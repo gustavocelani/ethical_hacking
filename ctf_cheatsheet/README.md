@@ -502,7 +502,9 @@ sudo umount {LOCAL_PATH}
 
 ```
 xfreerdp /u:{USER} /p:{PASS} /v:{TARGET}
+```
 
+```
 remmina
 ```
 
