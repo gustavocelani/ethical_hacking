@@ -388,7 +388,7 @@ ftp {TARGET}
 ftp> ls
 ftp> get {FILE}
 
-# Download multiples file to current directory
+# Download multiple files to current directory
 ftp> mget {DIRECTORY}
 
 # pwd
