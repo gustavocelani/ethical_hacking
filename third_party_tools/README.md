@@ -1,7 +1,7 @@
 # Third Party Tools
 
 * [Payloads All The Things](#Payloads-All-The-Things)
-* [SQLi Payloads List](#SQLi-Payloads-List)
+* [Payload Box](#Payload-Box)
 * [Privilege Escalation Awesome Scripts Suite](#Privilege-Escalation-Awesome-Scripts-Suite)
 * [Linux Exploit Suggester](#Linux-Exploit-Suggester)
 * [Enum4Linux](#Enum4Linux)
