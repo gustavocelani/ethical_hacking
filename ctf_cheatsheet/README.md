@@ -1107,12 +1107,6 @@ binwalk {FILE}
 binwalk -e {FILE}
 ```
 
-### BinWalk
-```
-# Extract Data
-binwalk -e {FILE}
-```
-
 ### StegSolve
 ```
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
