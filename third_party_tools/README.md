@@ -21,6 +21,7 @@
 * [QR Code Monkey](#QR-Code-Monkey)
 * [Sublist3r](#Sublist3r)
 * [IPTraf-ng](#IPTraf-ng)
+* [EtherApe](#EtherApe)
 
 
 
@@ -440,6 +441,22 @@ $ sudo apt-get install iptraf-ng
 
 # Run
 $ sudo iptraf-ng
+```
+
+# EtherApe
+
+**Repository**: [IFGHou/EtherApe](https://github.com/IFGHou/EtherApe)
+
+**EtherApe** is a network traffic browser that displays network activity graphically.
+
+### Basic Usage
+
+```
+# Installation
+$ sudo apt-get install etherape
+
+# Run
+$ sudo etherape
 ```
 
 ________________________
