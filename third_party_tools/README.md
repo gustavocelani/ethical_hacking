@@ -20,6 +20,7 @@
 * [Wayback Machine](#Wayback-Machine)
 * [QR Code Monkey](#QR-Code-Monkey)
 * [Sublist3r](#Sublist3r)
+* [IPTraf-ng](#IPTraf-ng)
 
 
 
@@ -411,7 +412,7 @@ The 100% Free QR Code Generator.
 
 **Repository**: [aboul3la/Sublist3r](https://github.com/aboul3la/Sublist3r)
 
-Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT.
+**Sublist3r** is a python tool designed to enumerate subdomains of websites using OSINT.
 
 ### Basic Usage
 
@@ -423,6 +424,22 @@ $ sudo pip3 install -r requirements.txt
 
 # Run
 $ python3 sublist3r.py -d {DOMAIN} -o {DESTINATION_FILE}
+```
+
+# IPTraf-ng
+
+**Repository**: [iptraf-ng](https://github.com/iptraf-ng/iptraf-ng)
+
+**IPTraf-ng** is a console-based network monitoring program for Linux that displays information about IP traffic.
+
+### Basic Usage
+
+```
+# Installation
+$ sudo apt-get install iptraf-ng
+
+# Run
+$ sudo iptraf-ng
 ```
 
 ________________________
