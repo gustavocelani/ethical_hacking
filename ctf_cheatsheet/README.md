@@ -4,6 +4,7 @@
 
 * [Host Discovery](#Host-Discovery)
 * [Port Scanning](#Port-Scanning)
+* [MAC Changer](#MAC-Changer)
 
 ## WEB
 
@@ -142,6 +143,28 @@ nmap --script=vuln {TARGET}
 
 # Search Nmap Scripts
 ls -lah /usr/share/nmap/scripts
+```
+
+# MAC Changer
+
+```
+# Check current MAC Address
+macchanger -s {INTERFACE}
+
+# Change MAC Address to Random Value
+ifconfig {INTERFACE} down
+macchanger -r {INTERFACE}
+ifconfig {INTERFACE} up
+
+# Change MAC Address to Specific Value
+ifconfig {INTERFACE} down
+macchanger --mac 12:34:56:78:90:AB {INTERFACE}
+ifconfig {INTERFACE} up
+
+# Restore Original MAC Address
+ifconfig {INTERFACE} down
+macchanger -p {INTERFACE}
+ifconfig {INTERFACE} up
 ```
 
 
