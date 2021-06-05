@@ -29,22 +29,21 @@
 # Payloads All The Things
 
 **Repository**: [swisskyrepo/PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
-
 A list of useful payloads and bypasses for Web Application Security.  
 Feel free to improve with your payloads and techniques!
+
 
 
 # Payload Box
 
 **Repository**: [payloadbox](https://github.com/payloadbox)
-
 Attack Payloads Only
+
 
 
 # Privilege Escalation Awesome Scripts Suite
 
 **Repository**: [carlospolop/privilege-escalation-awesome-scripts-suite](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite)
-
 Here you will find privilege escalation tools for Windows, Linux/Unix and MacOS.  
 These tools search for possible local privilege escalation paths that you could exploit.  
 So you can recognize the misconfigurations easily.
@@ -74,10 +73,10 @@ $ less -r linpeas_output.txt
 ```
 
 
+
 # Linux Exploit Suggester
 
 **Repository**: [mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
-
 LES tool is designed to assist in detecting security deficiencies for given Linux kernel/Linux-based machine.  
 
 ### Assessing Kernel Exposure on Publicly Known Exploits
@@ -109,7 +108,6 @@ $ ./les.sh
 # Enum4Linux
 
 **Website**: [enum4linux](https://labs.portcullis.co.uk/tools/enum4linux/)
-
 A Linux alternative to enum.exe for enumerating data from Windows and Samba hosts.
 
 ### Basic Usage
@@ -123,7 +121,6 @@ $ enum4linux {TARGET}
 # GTFOBins
 
 **Repository**: [GTFOBins](https://gtfobins.github.io/)
-
 GTFOBins is a curated list of Unix binaries that can be used to bypass local security restrictions in misconfigured systems.
 
 
@@ -131,7 +128,6 @@ GTFOBins is a curated list of Unix binaries that can be used to bypass local sec
 # OpenBoleto
 
 **Repository**: [openboleto/openboleto](https://github.com/openboleto/openboleto)
-
 O OpenBoleto é uma biblioteca de código aberto para geração de boletos bancários.  
 Boletos bancários são considerados um meio de pagamento muito comum no Brasil.  
 O foco é ser simples e ter uma arquitetura compatível com os recursos mais modernos do PHP.
@@ -326,7 +322,6 @@ $ ./kerbrute_linux_386 userenum --dc {TAGET} -d {DNS} {USERS_FILE}
 # BloodHound
 
 **Repository**: [BloodHoundAD/BloodHound](https://github.com/BloodHoundAD/BloodHound)
-
 It uses graph theory to reveal the hidden and often unintended relationships within an Active Directory environment.
 
 ### Basic Usage
@@ -367,7 +362,6 @@ $ bloodhound
 # Mimikatz
 
 **Repository**: [gentilkiwi/mimikatz](https://github.com/gentilkiwi/mimikatz/wiki)
-
 This is a tool to make somes experiments with Windows security.
 
 ### Basic Usage
@@ -389,7 +383,6 @@ $ lsadump::lsa /patch
 # CyberChef
 
 **WebSite**: [CyberChef](https://gchq.github.io/CyberChef/)
-
 Vesatile online endocing/secoding tool.
 
 
@@ -397,7 +390,6 @@ Vesatile online endocing/secoding tool.
 # Wayback Machine
 
 **WebSite**: [archive.org](https://archive.org/web/)
-
 Websites timeline.
 
 
@@ -405,7 +397,6 @@ Websites timeline.
 # QR Code Monkey
 
 **WebSite**: [qrcode-monkey.com](https://www.qrcode-monkey.com/)
-
 The 100% Free QR Code Generator.
 
 
@@ -413,7 +404,6 @@ The 100% Free QR Code Generator.
 # Sublist3r
 
 **Repository**: [aboul3la/Sublist3r](https://github.com/aboul3la/Sublist3r)
-
 **Sublist3r** is a python tool designed to enumerate subdomains of websites using OSINT.
 
 ### Basic Usage
@@ -433,7 +423,6 @@ $ python3 sublist3r.py -d {DOMAIN} -o {DESTINATION_FILE}
 # IPTraf-ng
 
 **Repository**: [iptraf-ng](https://github.com/iptraf-ng/iptraf-ng)
-
 **IPTraf-ng** is a console-based network monitoring program for Linux that displays information about IP traffic.
 
 ### Basic Usage
@@ -451,7 +440,6 @@ $ sudo iptraf-ng
 # EtherApe
 
 **Repository**: [IFGHou/EtherApe](https://github.com/IFGHou/EtherApe)
-
 **EtherApe** is a network traffic browser that displays network activity graphically.
 
 ### Basic Usage
@@ -469,7 +457,6 @@ $ sudo etherape
 # Virus Total
 
 **WebSite**: [virustotal.com](https://www.virustotal.com/gui/)
-
 Analyze suspicious files and URLs to detect types of malware, automatically share them with the security community.
 
 ________________________
