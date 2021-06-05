@@ -101,6 +101,7 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 # Brazilian Information Security Department
 
 **Main Page**: [gov.br/gsi/pt-br/assuntos/dsi](https://www.gov.br/gsi/pt-br/assuntos/dsi)
+
 **Newsletter**: [gov.br/gsi/pt-br/assuntos/dsi/boletim-informativo-mensal-1](https://www.gov.br/gsi/pt-br/assuntos/dsi/boletim-informativo-mensal-1)
 
 
