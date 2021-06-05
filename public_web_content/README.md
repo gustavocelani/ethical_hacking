@@ -6,6 +6,7 @@
 * [Exploit DB](#Exploit-DB)
 * [Kali Linux](#Kali-Linux)
 * [Information is Beautiful](#Information-is-Beautiful)
+* [Pastebin](#Pastebin)
 * [OWASP](#OWASP)
 * [Cyber Threat Maps](#Cyber-Threat-Maps)
 * [Brazilian Information Security Department](#Brazilian-Information-Security-Department)
@@ -69,6 +70,13 @@ Data, information, knowledge: we distil it into beautiful, useful graphics & dia
 
 **Top 500 Passwords**: [informationisbeautiful.net/visualizations/top-500-passwords-visualized](https://informationisbeautiful.net/visualizations/top-500-passwords-visualized/)  
 **World's Biggest Data Breaches & Hacks**: [informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks](https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/)
+
+
+
+# Pastebin
+
+**Main Page**: [pastebin.com](https://pastebin.com/)  
+A pastebin or text storage site is a type of online content hosting service where users can store plain text anonymously.
 
 
 
