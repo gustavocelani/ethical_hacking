@@ -8,6 +8,7 @@
 * [Information is Beautiful](#Information-is-Beautiful)
 * [OWASP](#OWASP)
 * [Cyber Threat Maps](#Cyber-Threat-Maps)
+* [Brazilian Information Security Department](#Brazilian-Information-Security-Department)
 * [Registro BR](#Registro-BR)
 * [Cert BR](#Cert-BR)
 * [CVSS Calculator](#CVSS-Calculator)
@@ -31,11 +32,11 @@ CVE Details provides an easy to use web interface to CVE vulnerability data.
 # Zone-H
 
 **Main Page**: [zone-h.com](http://www.zone-h.com/)  
-**Brazillian Page**: [zone-h.com.br](http://www.zone-h.com.br/)  
+**Brazilian Page**: [zone-h.com.br](http://www.zone-h.com.br/)  
 Forum with noticies, events, archive of leak data, statistics, hacked websites list.
 
 **Worldwide Special Archive**: [zone-h.com/archive](http://www.zone-h.com/archive/special=1)  
-**Brazillian Special Archive**: [br.zone-h.org/archive](http://br.zone-h.org/archive/special=1)  
+**Brazilian Special Archive**: [br.zone-h.org/archive](http://br.zone-h.org/archive/special=1)  
 Hacked web pages archive.
 
 
@@ -94,6 +95,13 @@ The OWASP Top 10 is a standard awareness document for developers and web applica
 **Spamhaus**: [spamhaus.com/threat-map](https://www.spamhaus.com/threat-map/)
 
 **Sonic Wall**: [securitycenter.sonicwall.com/m/page/worldwide-attacks](https://securitycenter.sonicwall.com/m/page/worldwide-attacks)
+
+
+
+# Brazilian Information Security Department
+
+**Main Page**: [gov.br/gsi/pt-br/assuntos/dsi](https://www.gov.br/gsi/pt-br/assuntos/dsi)
+**Newsletter**: [gov.br/gsi/pt-br/assuntos/dsi/boletim-informativo-mensal-1](https://www.gov.br/gsi/pt-br/assuntos/dsi/boletim-informativo-mensal-1)
 
 
 
