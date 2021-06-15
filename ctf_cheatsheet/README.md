@@ -205,6 +205,11 @@ gobuster dir -t 50 -u {TARGET} -w /usr/share/wordlists/dirbuster/directory-list-
 gobuster dir -t 50 -u {TARGET} -w /usr/share/seclists/Discovery/Web-Content/directory-list-lowercase-2.3-big.txt -x .php,.txt,.js,/,.html --wildcard
 ```
 
+### Get Page Content
+```
+wget -r {TARGET}
+```
+
 # WordPress
 
 ### Analysis
