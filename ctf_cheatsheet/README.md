@@ -60,6 +60,8 @@
 * [PowerShell](#PowerShell)
 * [PowerView](#PowerView)
 * [Looting](#Looting)
+* [Bloodhound](#Bloodhound)
+* [WiFi](#WiFi)
 
 ## Encoding / Cryptography
 
@@ -1024,6 +1026,14 @@ firefox http://localhost:7474/
 ### Start
 ```
 bloodhound
+```
+
+# WiFi
+
+### Gathering
+```
+netsh wlan show profile
+netsh wlan show profile <SSID> key=clear
 ```
 
 
