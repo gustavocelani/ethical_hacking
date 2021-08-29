@@ -23,6 +23,7 @@
 * [IPTraf-ng](#IPTraf-ng)
 * [EtherApe](#EtherApe)
 * [Virus Total](#Virus-Total)
+* [GraphQL Voyager](#GraphQL-Voyager)
 
 
 
@@ -460,4 +461,16 @@ $ sudo etherape
 **WebSite**: [virustotal.com](https://www.virustotal.com/gui/)  
 Analyze suspicious files and URLs to detect types of malware, automatically share them with the security community.
 
+
+
+# GraphQL Voyager
+
+**WebSite**: [apis.guru/graphql-voyager](https://apis.guru/graphql-voyager/)  
+Online GraphQL schema visualizer tool
+
+### Inspectiong GraphQL target's schema
+
+```
+{__schema{queryType{name}mutationType{name}subscriptionType{name}types{...FullType}directives{name description locations args{...InputValue}}}}fragment FullType on __Type{kind name description fields(includeDeprecated:true){name description args{...InputValue}type{...TypeRef}isDeprecated deprecationReason}inputFields{...InputValue}interfaces{...TypeRef}enumValues(includeDeprecated:true){name description isDeprecated deprecationReason}possibleTypes{...TypeRef}}fragment InputValue on __InputValue{name description type{...TypeRef}defaultValue}fragment TypeRef on __Type{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name ofType{kind name}}}}}}}}
+```
 ________________________
