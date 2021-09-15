@@ -27,7 +27,8 @@
 * [Pop3](#Pop3)
 * [SSH](#SSH)
 * [SCP](#SCP)
-* [SQL](#SQL)
+* [MySQL](#MySQL)
+* [MsSQL](#MsSQL)
 * [NFS](#NFS)
 * [RDP](#RDP)
 
@@ -490,7 +491,7 @@ scp {USER}@{IP}:{REMOTE_PATH} {LOCAL_PATH}
 scp -i {KEY} -p {PORT} {USER}@{IP}:{REMOTE_PATH} {LOCAL_PATH}
 ```
 
-# SQL
+# MySQL
 
 ### Connection
 ```
@@ -504,6 +505,23 @@ mysql> use {DATABASE};
 mysql> show tables;
 mysql> describe {TABLE};
 mysql> SELECT {FIELD_1},{FIELD_2} FROM {TABLE};
+```
+
+# MsSQL
+
+### Connection
+```
+# Impacket
+python3 mssqlclient.py -port {PORT} {USER}@{TARGET} -windows-auth
+```
+
+### Actions
+```
+# List Tables
+SQL> SELECT * FROM INFORMATION_SCHEMA.TABLES;
+
+# List Tables of Specific DB
+SQL> SELECT * FROM {DB_NAME}.INFORMATION_SCHEMA.TABLES;
 ```
 
 # NFS
