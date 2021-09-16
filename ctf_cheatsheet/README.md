@@ -55,7 +55,7 @@
 * [Reverse Engineering](#Reverse-Engineering)
 
 ## Windows
-* [Reverse Shell](#Reverse-Shell)
+* [Reverse Shell](#Windows-Reverse-Shell)
 * [Windows Password](#Windows-Password)
 * [Pass the Hash Attack](#Pass-the-Hash-Attack)
 * [Kerberos](#Kerberos)
@@ -937,7 +937,7 @@ ltrace {BINARY}
 
 
 
-# Reverse Shell
+# Windows Reverse Shell
 
 ### Powershell
 ```
