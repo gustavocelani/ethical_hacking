@@ -25,6 +25,7 @@
 * [Virus Total](#Virus-Total)
 * [GraphQL Voyager](#GraphQL-Voyager)
 * [Reverse Shell Generator](#Reverse-Shell-Generator)
+* [RapidPayload](#Rapid-Payload)
 
 
 
@@ -481,5 +482,12 @@ Online GraphQL schema visualizer tool
 
 **WebSite**: [revshells.com](https://www.revshells.com/)  
 Online reverse shell payload command generator
+
+
+
+# Rapid Payload
+
+**Repository**: [AngelSecurityTeam/RapidPayload](https://github.com/AngelSecurityTeam/RapidPayload)  
+Framework RapidPayload - Metasploit Payload Generator
 
 ________________________
