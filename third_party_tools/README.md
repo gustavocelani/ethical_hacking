@@ -25,7 +25,7 @@
 * [Virus Total](#Virus-Total)
 * [GraphQL Voyager](#GraphQL-Voyager)
 * [Reverse Shell Generator](#Reverse-Shell-Generator)
-* [RapidPayload](#Rapid-Payload)
+* [Rapid Payload](#Rapid-Payload)
 
 
 
