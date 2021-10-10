@@ -27,6 +27,7 @@
 * [Reverse Shell Generator](#Reverse-Shell-Generator)
 * [Rapid Payload](#Rapid-Payload)
 * [BashTop](#BashTop)
+* [PenTest.WS](#PenTest.WS)
 
 
 
@@ -506,5 +507,16 @@ $ cd bashtop
 $ sudo make install
 $ bashtop
 ```
+
+
+
+# PenTest.WS
+
+**WebSite**: [pentest.ws](https://pentest.ws)  
+The PenTest.WS platform eases your penetration testing process at every step.
+
+**Venom Builder**: [pentest.ws/tools/venom-builder](https://pentest.ws/tools/venom-builder)  
+**Echo File Uploader**: [pentest.ws/tools/echo-up](https://pentest.ws/tools/echo-up)  
+**CyberChef**: [pentest.ws/tools/cyberchef](https://pentest.ws/tools/cyberchef)
 
 ________________________
