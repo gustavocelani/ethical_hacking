@@ -28,6 +28,7 @@
 * [Rapid Payload](#Rapid-Payload)
 * [BashTop](#BashTop)
 * [PenTest.WS](#PenTest.WS)
+* [Reptile](#Reptile)
 
 
 
@@ -518,5 +519,13 @@ The PenTest.WS platform eases your penetration testing process at every step.
 **Venom Builder**: [pentest.ws/tools/venom-builder](https://pentest.ws/tools/venom-builder)  
 **Echo File Uploader**: [pentest.ws/tools/echo-up](https://pentest.ws/tools/echo-up)  
 **CyberChef**: [pentest.ws/tools/cyberchef](https://pentest.ws/tools/cyberchef)
+
+
+
+# Reptile
+
+**Repository**: [f0rb1dd3n/Reptile](https://github.com/f0rb1dd3n/Reptile)  
+Linux rootkit backdoor.
+
 
 ________________________
