@@ -4,6 +4,7 @@
 
 * [Host Discovery](#Host-Discovery)
 * [Port Scanning](#Port-Scanning)
+* [Subdomains](#Subdomains)
 * [MAC Changer](#MAC-Changer)
 
 ## WEB
@@ -152,6 +153,13 @@ nmap --script=vuln {TARGET}
 
 # Search Nmap Scripts
 ls -lah /usr/share/nmap/scripts
+```
+
+# Subdomains
+
+### OWASP AMASS
+```
+amass enum -active -d {DOMAIN} -brute -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
 ```
 
 # MAC Changer
